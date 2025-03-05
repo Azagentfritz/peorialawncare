@@ -1,6 +1,6 @@
 
-import { useEffect, useState } from "react";
-import { X } from "lucide-react";
+import { useState } from "react";
+import { Minimize2, Maximize2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type FloatingMessageProps = {
@@ -9,30 +9,12 @@ type FloatingMessageProps = {
 };
 
 const FloatingMessage = ({ message, className }: FloatingMessageProps) => {
-  const [isVisible, setIsVisible] = useState(true);
   const [isMinimized, setIsMinimized] = useState(false);
-
-  // Close the message permanently
-  const handleClose = () => {
-    setIsVisible(false);
-    // Store in localStorage so it doesn't show again in this session
-    localStorage.setItem('floatingMessageClosed', 'true');
-  };
 
   // Toggle between minimized and expanded states
   const handleToggle = () => {
     setIsMinimized(!isMinimized);
   };
-
-  useEffect(() => {
-    // Check if the message was previously closed
-    const isClosed = localStorage.getItem('floatingMessageClosed') === 'true';
-    if (isClosed) {
-      setIsVisible(false);
-    }
-  }, []);
-
-  if (!isVisible) return null;
 
   return (
     <div
@@ -47,28 +29,23 @@ const FloatingMessage = ({ message, className }: FloatingMessageProps) => {
         <div 
           className="w-full h-full flex items-center justify-center text-white text-xl font-bold"
           onClick={handleToggle}
+          aria-label="Expand message"
         >
-          i
+          <Maximize2 size={18} />
         </div>
       ) : (
-        <div className="relative">
-          <button 
-            onClick={handleClose}
-            className="absolute -top-2 -right-2 w-6 h-6 bg-lawn-500 rounded-full flex items-center justify-center text-white"
-            aria-label="Close message"
-          >
-            <X size={14} />
-          </button>
-          
+        <div className="relative">          
           <div className="pr-4">
             <p className="text-sm text-gray-700 leading-relaxed">{message}</p>
             
             <div className="flex justify-end mt-2">
               <button 
                 onClick={handleToggle}
-                className="text-xs text-lawn-600 hover:text-lawn-700"
+                className="text-xs text-lawn-600 hover:text-lawn-700 flex items-center gap-1"
+                aria-label="Minimize message"
               >
-                Minimize
+                <span>Minimize</span>
+                <Minimize2 size={14} />
               </button>
             </div>
           </div>
