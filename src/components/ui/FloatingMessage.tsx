@@ -1,20 +1,34 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Minimize2, Maximize2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type FloatingMessageProps = {
   message: string;
   className?: string;
+  onMinimizedChange?: (isMinimized: boolean) => void;
 };
 
-const FloatingMessage = ({ message, className }: FloatingMessageProps) => {
+const FloatingMessage = ({ message, className, onMinimizedChange }: FloatingMessageProps) => {
   const [isMinimized, setIsMinimized] = useState(false);
 
   // Toggle between minimized and expanded states
   const handleToggle = () => {
-    setIsMinimized(!isMinimized);
+    const newState = !isMinimized;
+    setIsMinimized(newState);
+    
+    // Notify parent component about state change
+    if (onMinimizedChange) {
+      onMinimizedChange(newState);
+    }
   };
+
+  // Initial notification of state to parent
+  useEffect(() => {
+    if (onMinimizedChange) {
+      onMinimizedChange(isMinimized);
+    }
+  }, []);
 
   return (
     <div
