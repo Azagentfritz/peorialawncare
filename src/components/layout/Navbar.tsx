@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Phone } from "lucide-react";
+import { Phone, Sprout } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,10 +41,8 @@ const Navbar = () => {
             href="#home" 
             className="flex items-center gap-2"
           >
-            <div className="h-10 w-10 rounded-full bg-lawn-500 flex items-center justify-center">
-              <div className="h-8 w-8 rounded-full bg-white flex items-center justify-center">
-                <div className="h-6 w-6 rounded-full bg-lawn-500"></div>
-              </div>
+            <div className="h-10 w-10 flex items-center justify-center bg-gradient-to-br from-lawn-300 to-lawn-600 rounded-lg p-2 shadow-md transition-all duration-300 hover:shadow-lawn-200/50">
+              <Sprout className="h-full w-full text-white" />
             </div>
             <span className={`text-xl font-semibold transition-colors duration-300 ${isScrolled ? 'text-lawn-800' : 'text-white'}`}>
               Peoria Lawn Care
