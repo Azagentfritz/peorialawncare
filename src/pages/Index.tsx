@@ -39,7 +39,7 @@ const Index = () => {
       
       {/* Call button positioned above the message button when minimized */}
       <FloatingCallButton 
-        phoneNumber="520-255-8274"
+        phoneNumber="623-845-2626"
         className={`bottom-6 right-6 ${isMessageMinimized ? 'mb-16' : 'hidden'}`}
       />
       
