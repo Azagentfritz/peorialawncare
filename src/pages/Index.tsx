@@ -30,8 +30,8 @@ const Index = () => {
       <main className="flex-grow">
         <Hero />
         <About />
-        <Services />
         <Projects />
+        <Services />
         <Contact />
       </main>
       
