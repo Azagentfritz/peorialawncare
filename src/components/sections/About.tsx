@@ -1,4 +1,3 @@
-
 import { CheckCircle, Phone } from "lucide-react";
 
 const About = () => {
@@ -21,13 +20,6 @@ const About = () => {
               <img 
                 src="/lovable-uploads/eb0bc187-f26e-4d93-929f-55a4cb1b1ae6.png" 
                 alt="Beautiful landscape with firepit" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-6 -right-6 w-2/3 h-2/3 rounded-lg overflow-hidden shadow-xl z-0">
-              <img 
-                src="/lovable-uploads/167b96bd-0c16-4360-abcc-efdaa39c0176.png" 
-                alt="Professional landscaping" 
                 className="w-full h-full object-cover"
               />
             </div>
