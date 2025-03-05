@@ -1,4 +1,6 @@
+
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Sprout } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -155,7 +157,22 @@ const Footer = () => {
           <p>© {currentYear} Peoria Lawn Care. All rights reserved.</p>
           <p className="mt-2">
             <a href="#" className="hover:text-lawn-400 transition-colors duration-300">Privacy Policy</a> | 
-            <a href="#" className="hover:text-lawn-400 transition-colors duration-300 ml-2">Terms of Service</a>
+            <a href="#" className="hover:text-lawn-400 transition-colors duration-300 ml-2">Terms of Service</a> |
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a href="#" className="hover:text-lawn-400 transition-colors duration-300 ml-2">
+                  <span className="text-lawn-500">Designer</span>
+                </a>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs bg-lawn-100 text-lawn-900 border-lawn-300 p-3 rounded-lg shadow-lg">
+                <p className="text-left">
+                  "I made you this website, hope you like it. I'm not a salesy person so I'll let my work do it."
+                </p>
+                <p className="text-right mt-2 font-medium text-lawn-700">
+                  - Fritz Francois, Buckeye Arizona
+                </p>
+              </TooltipContent>
+            </Tooltip>
           </p>
         </div>
       </div>
