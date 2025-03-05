@@ -36,7 +36,7 @@ const FloatingMessage = ({ message, className }: FloatingMessageProps) => {
       ) : (
         <div className="relative">          
           <div className="pr-4">
-            <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">{message}</p>
+            <p className="text-sm text-gray-700 leading-relaxed">{message}</p>
             
             <div className="flex justify-end mt-2">
               <button 
