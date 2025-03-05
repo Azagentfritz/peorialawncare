@@ -30,7 +30,8 @@ const Index = () => {
       <Footer />
       
       <FloatingMessage 
-        message="I made you this website, hope you like it. I'm not a salesy person so I'll let my work do it. Fritz Francois, Buckeye Arizona - 520-255-8274" 
+        message="I made you this website, hope you like it. I'm not a salesy person so I'll let my work do it. Fritz Francois, Buckeye Arizona
+520-255-8274" 
       />
     </div>
   );
