@@ -1,5 +1,4 @@
-
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Sprout } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,10 +20,8 @@ const Footer = () => {
           {/* Company Info */}
           <div className="animate-fade-in">
             <div className="flex items-center gap-2 mb-4">
-              <div className="h-10 w-10 rounded-full bg-lawn-500 flex items-center justify-center">
-                <div className="h-8 w-8 rounded-full bg-white flex items-center justify-center">
-                  <div className="h-6 w-6 rounded-full bg-lawn-500"></div>
-                </div>
+              <div className="h-10 w-10 flex items-center justify-center bg-gradient-to-br from-lawn-300 to-lawn-600 rounded-lg p-2 shadow-md">
+                <Sprout className="h-full w-full text-white" />
               </div>
               <span className="text-xl font-semibold">Peoria Lawn Care</span>
             </div>
