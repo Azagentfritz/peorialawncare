@@ -6,6 +6,7 @@ import About from "@/components/sections/About";
 import Services from "@/components/sections/Services";
 import Projects from "@/components/sections/Projects";
 import Contact from "@/components/sections/Contact";
+import FloatingMessage from "@/components/ui/FloatingMessage";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -27,6 +28,10 @@ const Index = () => {
       </main>
       
       <Footer />
+      
+      <FloatingMessage 
+        message="I made you this website, hope you like it. I'm not a salesy person so I'll let my work do it. Fritz Francois, Buckeye Arizona" 
+      />
     </div>
   );
 };
