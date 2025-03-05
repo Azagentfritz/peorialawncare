@@ -25,8 +25,8 @@ const Projects = () => {
     },
     {
       imgSrc: "/lovable-uploads/0ead037d-ae0d-4cb2-b79d-5faf2fdb26f1.png",
-      title: "Fire Pit Installation",
-      description: "Custom-built fire pit with stone finish, surrounded by comfortable seating and lush green lawn."
+      title: "Front Lawn Landscaping",
+      description: "Beautiful front yard design with lush green grass, decorative borders, and elegant pathways enhancing curb appeal."
     },
     {
       imgSrc: "/lovable-uploads/73458201-84f9-42ed-aef2-a2a511d101ad.png",
