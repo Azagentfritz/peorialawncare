@@ -1,6 +1,7 @@
 
-import { Droplets, Flower2, TreePine, PenTool, SunMedium, Shovel } from "lucide-react";
+import { Droplets, Flower2, TreePine, PenTool, SunMedium } from "lucide-react";
 import ServiceCard from "../ui/ServiceCard";
+import { cn } from "@/lib/utils";
 
 const Services = () => {
   const services = [
@@ -46,20 +47,57 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {services.map((service, index) => (
-            <div 
-              key={index} 
-              className="animate-fade-in" 
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <ServiceCard
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-              />
-            </div>
-          ))}
+        <div className="max-w-6xl mx-auto">
+          {/* Desktop layout: First row with 3 items */}
+          <div className="hidden lg:grid lg:grid-cols-3 gap-8 mb-8">
+            {services.slice(0, 3).map((service, index) => (
+              <div 
+                key={index} 
+                className="animate-fade-in" 
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <ServiceCard
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                />
+              </div>
+            ))}
+          </div>
+          
+          {/* Desktop layout: Second row with 2 items centered */}
+          <div className="hidden lg:grid lg:grid-cols-2 gap-8 lg:px-[12.5%]">
+            {services.slice(3, 5).map((service, index) => (
+              <div 
+                key={index + 3} 
+                className="animate-fade-in" 
+                style={{ animationDelay: `${(index + 3) * 100}ms` }}
+              >
+                <ServiceCard
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                />
+              </div>
+            ))}
+          </div>
+          
+          {/* Mobile and tablet layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-8">
+            {services.map((service, index) => (
+              <div 
+                key={index} 
+                className="animate-fade-in" 
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <ServiceCard
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="text-center mt-12">
