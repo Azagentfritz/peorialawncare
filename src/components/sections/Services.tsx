@@ -1,3 +1,4 @@
+
 import { Droplets, Flower2, TreePine, PenTool, SunMedium, Shovel } from "lucide-react";
 import ServiceCard from "../ui/ServiceCard";
 
@@ -31,7 +32,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="section-padding">
+    <section id="services" className="section-padding bg-lawn-50">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-lawn-600 text-sm font-semibold uppercase tracking-wider">Our Services</span>
@@ -45,7 +46,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <div 
               key={index} 
@@ -64,7 +65,7 @@ const Services = () => {
         <div className="text-center mt-12">
           <a 
             href="#contact" 
-            className="inline-block bg-lawn-500 hover:bg-lawn-600 text-white px-8 py-3 rounded-full transition-all duration-300 text-lg font-medium"
+            className="inline-block bg-lawn-500 hover:bg-lawn-600 text-white px-8 py-3 rounded-full transition-all duration-300 text-lg font-medium shadow-md hover:shadow-lg"
           >
             Request a Service
           </a>
