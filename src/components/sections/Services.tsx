@@ -1,14 +1,8 @@
-
-import { Leaf, Droplets, Flower2, TreePine, PenTool, SunMedium } from "lucide-react";
+import { Droplets, Flower2, TreePine, PenTool, SunMedium, Shovel } from "lucide-react";
 import ServiceCard from "../ui/ServiceCard";
 
 const Services = () => {
   const services = [
-    {
-      icon: <Leaf size={28} />,
-      title: "Lawn Maintenance",
-      description: "Regular care and maintenance to keep your lawn healthy, green, and beautiful throughout the year."
-    },
     {
       icon: <PenTool size={28} />,
       title: "Landscape Design",
