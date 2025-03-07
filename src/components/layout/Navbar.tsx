@@ -1,12 +1,16 @@
 
 import { useState, useEffect } from "react";
-import { Phone, Sprout } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Phone, Sprout, LogOut } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,7 +21,15 @@ const Navbar = () => {
       }
     };
 
+    // Check if user is logged in
+    const checkLoginStatus = () => {
+      const userToken = localStorage.getItem('userToken');
+      setIsLoggedIn(!!userToken);
+    };
+
     window.addEventListener("scroll", handleScroll);
+    checkLoginStatus();
+    
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -48,6 +60,21 @@ const Navbar = () => {
     return false;
   };
 
+  const handleSignOut = () => {
+    // Clear user data from localStorage
+    localStorage.removeItem('userToken');
+    localStorage.removeItem('userData');
+    
+    // Update state
+    setIsLoggedIn(false);
+    
+    // Show success message
+    toast.success("Signed out successfully");
+    
+    // Redirect to home page
+    navigate('/');
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -71,7 +98,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-4">
             <ul className="flex space-x-8">
               {navLinks.map((link) => (
                 <li key={link.name}>
@@ -86,13 +113,28 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <a
-              href="tel:+16238452626"
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-lawn-500 text-white transition-all duration-300 hover:bg-lawn-600"
-            >
-              <Phone size={16} />
-              <span className="text-sm font-medium">+1 (623) 845-2626</span>
-            </a>
+            
+            <div className="flex items-center gap-3">
+              {isLoggedIn && (
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  onClick={handleSignOut}
+                  className={`flex items-center gap-1 hover:bg-red-50 ${isScrolled ? 'text-gray-700 hover:text-red-600' : 'text-white hover:text-red-500'}`}
+                >
+                  <LogOut size={16} />
+                  <span>Sign Out</span>
+                </Button>
+              )}
+              
+              <a
+                href="tel:+16238452626"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-lawn-500 text-white transition-all duration-300 hover:bg-lawn-600"
+              >
+                <Phone size={16} />
+                <span className="text-sm font-medium">+1 (623) 845-2626</span>
+              </a>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -143,6 +185,22 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
+            
+            {isLoggedIn && (
+              <li>
+                <button
+                  onClick={() => {
+                    handleSignOut();
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="flex items-center gap-2 w-full py-2 text-sm font-medium text-red-600 hover:text-red-700"
+                >
+                  <LogOut size={16} />
+                  <span>Sign Out</span>
+                </button>
+              </li>
+            )}
+            
             <li>
               <a
                 href="tel:+16238452626"
