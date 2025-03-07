@@ -1,4 +1,5 @@
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Sprout } from "lucide-react";
+
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Sprout, Star, Tiktok } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,7 +30,7 @@ const Footer = () => {
               Professional landscaping services in Phoenix, Arizona. 
               We transform outdoor spaces into beautiful, functional areas that enhance your property.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-3">
               <a 
                 href="#" 
                 className="w-8 h-8 rounded-full bg-lawn-700 flex items-center justify-center transition-colors duration-300 hover:bg-lawn-500"
@@ -50,6 +51,20 @@ const Footer = () => {
                 aria-label="Twitter"
               >
                 <Twitter size={16} />
+              </a>
+              <a 
+                href="#" 
+                className="w-8 h-8 rounded-full bg-lawn-700 flex items-center justify-center transition-colors duration-300 hover:bg-lawn-500"
+                aria-label="Yelp"
+              >
+                <Star size={16} />
+              </a>
+              <a 
+                href="#" 
+                className="w-8 h-8 rounded-full bg-lawn-700 flex items-center justify-center transition-colors duration-300 hover:bg-lawn-500"
+                aria-label="TikTok"
+              >
+                <Tiktok size={16} />
               </a>
             </div>
           </div>
