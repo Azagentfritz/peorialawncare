@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { ArrowRight, Camera, GalleryHorizontal } from "lucide-react";
+import { Camera, GalleryHorizontal } from "lucide-react";
 import ProjectCard from "@/components/ui/ProjectCard";
 import FloatingCallButton from "@/components/ui/FloatingCallButton";
 
@@ -79,8 +79,7 @@ const Galleries = () => {
                   className="flex items-center gap-2 bg-white text-lawn-700 px-6 py-3 rounded-full transition-all duration-300 hover:bg-lawn-50 hover:shadow-lg"
                 >
                   <GalleryHorizontal className="w-5 h-5" />
-                  <span>View Gallery</span>
-                  <ArrowRight className="w-4 h-4 ml-1" />
+                  <span>Browse Projects</span>
                 </a>
               </div>
             </div>
