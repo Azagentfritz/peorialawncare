@@ -1,7 +1,6 @@
 
-import { Droplets, Flower2, TreePine, PenTool, SunMedium, ImageIcon } from "lucide-react";
+import { Droplets, Flower2, TreePine, PenTool, SunMedium } from "lucide-react";
 import ServiceCard from "../ui/ServiceCard";
-import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 const Services = () => {
@@ -101,20 +100,13 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="text-center mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="text-center mt-12">
           <a 
             href="#contact" 
             className="inline-block bg-lawn-500 hover:bg-lawn-600 text-white px-8 py-3 rounded-full transition-all duration-300 text-lg font-medium shadow-md hover:shadow-lg"
           >
             Request a Service
           </a>
-          <Link 
-            to="/gallery" 
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-lawn-500 text-lawn-600 hover:bg-lawn-50 transition-all duration-300 text-lg font-medium"
-          >
-            <ImageIcon size={20} />
-            <span>View Our Gallery</span>
-          </Link>
         </div>
       </div>
     </section>
