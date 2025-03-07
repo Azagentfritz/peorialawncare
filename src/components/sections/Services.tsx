@@ -8,32 +8,27 @@ const Services = () => {
     {
       icon: <PenTool size={28} />,
       title: "Landscape Design",
-      description: "Custom landscape design services that transform your outdoor space into a beautiful, functional extension of your home.",
-      path: "/services/landscape-design"
+      description: "Custom landscape design services that transform your outdoor space into a beautiful, functional extension of your home."
     },
     {
       icon: <Lightbulb size={28} />,
       title: "Outdoor Lighting",
-      description: "Professional lighting design and installation to enhance your landscape's beauty after dark while improving safety and security.",
-      path: "/services/outdoor-lighting"
+      description: "Professional lighting design and installation to enhance your landscape's beauty after dark while improving safety and security."
     },
     {
       icon: <Droplets size={28} />,
       title: "Irrigation Systems",
-      description: "Installation and maintenance of efficient irrigation systems to ensure optimal watering for your landscape.",
-      path: "/services/irrigation-systems"
+      description: "Installation and maintenance of efficient irrigation systems to ensure optimal watering for your landscape."
     },
     {
       icon: <Flower2 size={28} />,
       title: "Artificial Turf",
-      description: "High-quality artificial turf installation that provides a lush, green lawn without the maintenance or water requirements.",
-      path: "/services/artificial-turf"
+      description: "High-quality artificial turf installation that provides a lush, green lawn without the maintenance or water requirements."
     },
     {
       icon: <SunMedium size={28} />,
       title: "Outdoor Features",
-      description: "Custom fire pits, outdoor kitchens, and other features that enhance the functionality and enjoyment of your outdoor space.",
-      path: "/services/outdoor-features"
+      description: "Custom fire pits, outdoor kitchens, and other features that enhance the functionality and enjoyment of your outdoor space."
     },
   ];
 
@@ -65,7 +60,6 @@ const Services = () => {
                   icon={service.icon}
                   title={service.title}
                   description={service.description}
-                  path={service.path}
                 />
               </div>
             ))}
@@ -83,7 +77,6 @@ const Services = () => {
                   icon={service.icon}
                   title={service.title}
                   description={service.description}
-                  path={service.path}
                 />
               </div>
             ))}
@@ -101,7 +94,6 @@ const Services = () => {
                   icon={service.icon}
                   title={service.title}
                   description={service.description}
-                  path={service.path}
                 />
               </div>
             ))}
