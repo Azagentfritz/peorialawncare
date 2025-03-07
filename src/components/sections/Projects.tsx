@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import ProjectCard from "../ui/ProjectCard";
 
@@ -26,7 +25,7 @@ const Projects = () => {
     },
     {
       imgSrc: "/lovable-uploads/0ead037d-ae0d-4cb2-b79d-5faf2fdb26f1.png",
-      title: "Front Lawn Landscaping",
+      title: "Curb Appeal Enhancement",
       description: "Beautiful front yard design with lush green grass, decorative borders, and elegant pathways enhancing curb appeal."
     },
     {
