@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Sprout, Star } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Sprout } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -47,20 +47,6 @@ const Footer = () => {
                 aria-label="Instagram"
               >
                 <Instagram size={16} />
-              </a>
-              <a 
-                href="#" 
-                className="w-8 h-8 rounded-full bg-lawn-700 flex items-center justify-center transition-colors duration-300 hover:bg-lawn-500"
-                aria-label="Twitter"
-              >
-                <Twitter size={16} />
-              </a>
-              <a 
-                href="#" 
-                className="w-8 h-8 rounded-full bg-lawn-700 flex items-center justify-center transition-colors duration-300 hover:bg-lawn-500"
-                aria-label="Yelp"
-              >
-                <Star size={16} />
               </a>
               <a 
                 href="https://www.tiktok.com/@peorialawncare"
