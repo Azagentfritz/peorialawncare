@@ -1,4 +1,3 @@
-
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Sprout, Star } from "lucide-react";
 
 const Footer = () => {
@@ -32,14 +31,18 @@ const Footer = () => {
             </p>
             <div className="flex flex-wrap gap-3">
               <a 
-                href="#" 
+                href="https://www.facebook.com/Peorialawncare/"
+                target="_blank"
+                rel="noopener noreferrer" 
                 className="w-8 h-8 rounded-full bg-lawn-700 flex items-center justify-center transition-colors duration-300 hover:bg-lawn-500"
                 aria-label="Facebook"
               >
                 <Facebook size={16} />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/peorialawncare"
+                target="_blank"
+                rel="noopener noreferrer" 
                 className="w-8 h-8 rounded-full bg-lawn-700 flex items-center justify-center transition-colors duration-300 hover:bg-lawn-500"
                 aria-label="Instagram"
               >
@@ -60,7 +63,9 @@ const Footer = () => {
                 <Star size={16} />
               </a>
               <a 
-                href="#" 
+                href="https://www.tiktok.com/@peorialawncare"
+                target="_blank"
+                rel="noopener noreferrer" 
                 className="w-8 h-8 rounded-full bg-lawn-700 flex items-center justify-center transition-colors duration-300 hover:bg-lawn-500"
                 aria-label="TikTok"
               >
