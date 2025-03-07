@@ -13,15 +13,15 @@ const ArtificialTurf = () => {
       <main className="flex-grow pt-20">
         {/* Hero Section */}
         <section className="relative bg-gray-900 text-white py-20">
-          <div className="absolute inset-0 opacity-60 bg-gradient-to-r from-gray-900 to-gray-800"></div>
+          <div className="absolute inset-0 opacity-40 bg-gradient-to-r from-gray-900 to-gray-800"></div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col items-center text-center">
               <div className="w-16 h-16 bg-lawn-50 rounded-lg flex items-center justify-center text-lawn-600 mb-6">
                 <Flower2 size={28} />
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Artificial Turf</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white shadow-sm">Artificial Turf</h1>
               <div className="w-20 h-1 bg-lawn-500 mx-auto mb-6"></div>
-              <p className="text-xl max-w-3xl mx-auto">
+              <p className="text-xl max-w-3xl mx-auto text-white">
                 High-quality artificial turf installation that provides a lush, green lawn without 
                 the maintenance or water requirements.
               </p>
