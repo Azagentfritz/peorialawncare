@@ -1,5 +1,5 @@
+
 import ProjectCard from "../ui/ProjectCard";
-import { GalleryHorizontal } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -66,7 +66,7 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="mt-16 flex flex-col items-center gap-6">
+        <div className="mt-16 text-center">
           <div className="inline-flex items-center gap-4 p-4 bg-white rounded-lg shadow-md">
             <div className="h-12 w-12 bg-lawn-50 rounded-full flex items-center justify-center">
               <span className="text-lawn-600 font-bold text-xl">80+</span>
@@ -76,14 +76,6 @@ const Projects = () => {
               <p className="font-medium">Satisfied Customers</p>
             </div>
           </div>
-          
-          <a 
-            href="/galleries" 
-            className="inline-flex items-center gap-2 px-6 py-3 bg-lawn-500 hover:bg-lawn-600 text-white rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
-          >
-            <GalleryHorizontal size={18} />
-            <span>View Full Galleries</span>
-          </a>
         </div>
       </div>
     </section>
