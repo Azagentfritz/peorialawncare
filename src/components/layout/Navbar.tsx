@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Phone, Sprout } from "lucide-react";
 
@@ -20,11 +19,12 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", url: "#home" },
-    { name: "About", url: "#about" },
-    { name: "Services", url: "#services" },
-    { name: "Projects", url: "#projects" },
-    { name: "Contact", url: "#contact" },
+    { name: "Home", url: "/" },
+    { name: "About", url: "/#about" },
+    { name: "Services", url: "/#services" },
+    { name: "Projects", url: "/#projects" },
+    { name: "Galleries", url: "/galleries" },
+    { name: "Contact", url: "/#contact" },
   ];
 
   return (
@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <a 
-            href="#home" 
+            href="/" 
             className="flex items-center gap-2"
           >
             <div className="h-10 w-10 flex items-center justify-center bg-gradient-to-br from-lawn-300 to-lawn-600 rounded-lg p-2 shadow-md transition-all duration-300 hover:shadow-lawn-200/50">
