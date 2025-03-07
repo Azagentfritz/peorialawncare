@@ -185,33 +185,7 @@ const Gallery = () => {
           </div>
         </section>
         
-        {/* Testimonial Section */}
-        <section className="section-padding bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="mb-8">
-                <span className="text-lawn-600 text-sm font-semibold uppercase tracking-wider">What Our Clients Say</span>
-                <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">Client Testimonials</h2>
-                <div className="w-20 h-1 bg-lawn-500 mx-auto mb-6"></div>
-              </div>
-              
-              <blockquote className="italic text-lg md:text-xl text-gray-700 mb-6">
-                "Peoria Lawn Care transformed our backyard from an unused space into a beautiful 
-                retreat for our family. The team was professional, punctual, and the quality of work exceeded our expectations."
-              </blockquote>
-              
-              <div className="flex items-center justify-center">
-                <div className="w-12 h-12 bg-lawn-100 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-lawn-600 font-semibold">JD</span>
-                </div>
-                <div className="text-left">
-                  <p className="font-semibold">John Davis</p>
-                  <p className="text-sm text-gray-500">Peoria, AZ</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Testimonial Section has been removed */}
       </main>
       
       <Footer />
