@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Phone, Sprout } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,11 +21,12 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", url: "#home" },
-    { name: "About", url: "#about" },
-    { name: "Services", url: "#services" },
-    { name: "Projects", url: "#projects" },
-    { name: "Contact", url: "#contact" },
+    { name: "Home", url: "/" },
+    { name: "About", url: "/#about" },
+    { name: "Services", url: "/#services" },
+    { name: "Projects", url: "/#projects" },
+    { name: "Gallery", url: "/gallery" },
+    { name: "Contact", url: "/#contact" },
   ];
 
   return (
@@ -37,8 +39,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <a 
-            href="#home" 
+          <Link 
+            to="/" 
             className="flex items-center gap-2"
           >
             <div className="h-10 w-10 flex items-center justify-center bg-gradient-to-br from-lawn-300 to-lawn-600 rounded-lg p-2 shadow-md transition-all duration-300 hover:shadow-lawn-200/50">
@@ -47,21 +49,32 @@ const Navbar = () => {
             <span className={`text-xl font-semibold transition-colors duration-300 ${isScrolled ? 'text-lawn-800' : 'text-white'}`}>
               Peoria Lawn Care
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <ul className="flex space-x-8">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.url}
-                    className={`text-sm font-medium transition-all duration-300 hover:text-lawn-500 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-lawn-500 after:transition-all after:duration-300 hover:after:w-full ${
-                      isScrolled ? "text-gray-800" : "text-white"
-                    }`}
-                  >
-                    {link.name}
-                  </a>
+                  {link.url.startsWith("/#") ? (
+                    <a
+                      href={link.url}
+                      className={`text-sm font-medium transition-all duration-300 hover:text-lawn-500 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-lawn-500 after:transition-all after:duration-300 hover:after:w-full ${
+                        isScrolled ? "text-gray-800" : "text-white"
+                      }`}
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.url}
+                      className={`text-sm font-medium transition-all duration-300 hover:text-lawn-500 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-lawn-500 after:transition-all after:duration-300 hover:after:w-full ${
+                        isScrolled ? "text-gray-800" : "text-white"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -111,13 +124,23 @@ const Navbar = () => {
           <ul className="flex flex-col px-4 pt-4 pb-6 gap-4">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <a
-                  href={link.url}
-                  className="block text-gray-800 py-2 text-sm font-medium hover:text-lawn-500"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
+                {link.url.startsWith("/#") ? (
+                  <a
+                    href={link.url}
+                    className="block text-gray-800 py-2 text-sm font-medium hover:text-lawn-500"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    to={link.url}
+                    className="block text-gray-800 py-2 text-sm font-medium hover:text-lawn-500"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                )}
               </li>
             ))}
             <li>
