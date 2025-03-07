@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { ImageIcon, Camera, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ImageIcon, Camera, ChevronLeft, ChevronRight, X, Phone, ChevronUp } from "lucide-react";
 import FloatingCallButton from "@/components/ui/FloatingCallButton";
 
 type GalleryCategory = "all" | "residential" | "commercial" | "turf" | "features";
