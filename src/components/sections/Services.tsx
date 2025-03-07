@@ -1,5 +1,5 @@
 
-import { Droplets, Flower2, TreePine, PenTool, SunMedium } from "lucide-react";
+import { Droplets, Flower2, TreePine, PenTool, SunMedium, Lamp } from "lucide-react";
 import ServiceCard from "../ui/ServiceCard";
 import { cn } from "@/lib/utils";
 
@@ -11,9 +11,9 @@ const Services = () => {
       description: "Custom landscape design services that transform your outdoor space into a beautiful, functional extension of your home."
     },
     {
-      icon: <TreePine size={28} />,
-      title: "Tree & Shrub Care",
-      description: "Professional pruning, trimming, and care for trees and shrubs to maintain their health and enhance your landscape."
+      icon: <Lamp size={28} />,
+      title: "Outdoor Lighting",
+      description: "Professional lighting design and installation to enhance your landscape's beauty after dark while improving safety and security."
     },
     {
       icon: <Droplets size={28} />,
