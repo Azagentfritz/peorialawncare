@@ -15,21 +15,21 @@ const OutdoorLightingGallery = () => {
   const galleryItems = [
     {
       id: 1,
-      image: "/lovable-uploads/0b936a5b-14ce-40f1-91a3-3d1ff8c45243.png",
-      title: "Evening Entertainment Lighting",
-      description: "Ambient fire feature and accent lighting for outdoor gatherings."
+      image: "/lovable-uploads/c999f4ac-bfe2-4df7-a174-606c0ed44f2f.png",
+      title: "Outdoor Entertainment Space Lighting",
+      description: "Fire feature and ambient lighting create a perfect evening gathering space."
     },
     {
       id: 2,
-      image: "/lovable-uploads/dd1a2c84-08a9-4d85-90ad-8e9fd82eb15b.png",
-      title: "Front Yard Security Lighting",
-      description: "Strategic lighting for enhanced curb appeal and security."
+      image: "/lovable-uploads/ea41def9-f6ff-4ca7-b709-9fc77d8ca393.png",
+      title: "Home Exterior & Landscape Lighting",
+      description: "Strategic lighting enhances curb appeal and highlights architectural features."
     },
     {
       id: 3,
-      image: "/lovable-uploads/888f359e-1bb7-43a3-b71e-4db43cdd87ab.png",
-      title: "Decorative Water Feature Lighting",
-      description: "Illuminated water columns creating evening ambiance."
+      image: "/lovable-uploads/6d884196-127a-4f83-9474-15d22fb4f54f.png",
+      title: "Water Feature Accent Lighting",
+      description: "Illuminated fountain columns create a stunning focal point in the garden."
     }
   ];
 
