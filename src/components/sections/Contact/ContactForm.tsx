@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Send, Loader2 } from "lucide-react";
+import { Send, Loader2, Info } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import SuccessMessage from "./SuccessMessage";
 
@@ -97,6 +97,14 @@ const ContactForm = () => {
       ) : (
         <>
           <h3 className="text-2xl font-semibold mb-6">Send Us a Message</h3>
+          
+          <div className="mb-6 p-3 bg-blue-50 rounded-md flex items-start gap-3">
+            <Info size={20} className="text-blue-600 shrink-0 mt-0.5" />
+            <p className="text-sm text-blue-700">
+              <strong>Preview Mode:</strong> This form simulates sending emails in the development environment. 
+              In production, you'll need to replace 'yourResendApiKeyHere' with your actual Resend API key.
+            </p>
+          </div>
           
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
