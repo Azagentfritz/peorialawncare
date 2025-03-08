@@ -113,13 +113,7 @@ const ArtificialTurfGallery = () => {
                   onClick={() => openLightbox(index)}
                 >
                   <div className="aspect-w-4 aspect-h-3 h-64 overflow-hidden">
-                    <img 
-                      src={item.image} 
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-700 
-                      group-hover:scale-110"
-                      loading="lazy"
-                    />
+                    {/* Image has been removed */}
                   </div>
                 </div>
               ))}
