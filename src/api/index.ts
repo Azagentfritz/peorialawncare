@@ -9,10 +9,18 @@ export type ApiResponse = {
 
 // This file creates a mapping between API routes and their handlers
 export const apiRoutes = {
-  '/api/send-email': async (request: Request) => {
+  '/api/send-email': async (request: Request): Promise<Response | ApiResponse> => {
     if (request.method === 'POST') {
-      const data = await request.json();
-      return await sendContactEmail(data);
+      try {
+        const data = await request.json();
+        return await sendContactEmail(data);
+      } catch (error) {
+        console.error('API route error:', error);
+        return {
+          success: false,
+          error: error instanceof Error ? error.message : 'Unknown error processing request'
+        };
+      }
     }
     
     return new Response(JSON.stringify({ error: 'Method not allowed' }), {

@@ -1,5 +1,5 @@
 
-import { apiRoutes } from '../api';
+import { apiRoutes, ApiResponse } from '../api';
 
 export async function handleApiRequest(request: Request) {
   const url = new URL(request.url);
@@ -8,31 +8,23 @@ export async function handleApiRequest(request: Request) {
   // Check if the request path matches any of our API routes
   if (pathname in apiRoutes) {
     try {
+      console.log(`Handling API request to ${pathname}`);
       const handler = apiRoutes[pathname as keyof typeof apiRoutes];
       const result = await handler(request);
       
-      // Check if result is an API response object with success property
-      // or a standard Response object
-      if (!(result instanceof Response) && 'success' in result) {
-        // Return the API response
+      // Check if result is a Response object or an ApiResponse object
+      if (result instanceof Response) {
+        // If it's already a Response object, return it directly
+        return result;
+      } else {
+        // It's an ApiResponse object, so convert it to a Response
         return new Response(JSON.stringify(result), {
-          status: result.success === false ? 400 : 200,
+          status: result.success ? 200 : 400,
           headers: {
             'Content-Type': 'application/json'
           }
         });
-      } else if (result instanceof Response) {
-        // If it's already a Response object, return it directly
-        return result;
       }
-      
-      // Fallback for any other type of result
-      return new Response(JSON.stringify(result), {
-        status: 200,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
     } catch (error) {
       console.error('API error:', error);
       const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';

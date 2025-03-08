@@ -1,5 +1,6 @@
 
 import { Resend } from 'resend';
+import { ApiResponse } from './index';
 
 // Initialize Resend with your API key
 const resend = new Resend('re_7y2Me4us_jQUMqPoaCFsUgXwqtHYRTZKA');
@@ -10,8 +11,13 @@ export async function sendContactEmail(data: {
   phone: string;
   service: string;
   message: string;
-}) {
+}): Promise<ApiResponse> {
   try {
+    console.log('Sending contact email with data:', {
+      ...data,
+      message: data.message.substring(0, 30) + (data.message.length > 30 ? '...' : '')
+    });
+
     // Email to owner/business (primary recipient)
     const ownerEmailResult = await resend.emails.send({
       from: 'contact@peoria-lawncare.com',
