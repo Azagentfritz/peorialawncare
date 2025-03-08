@@ -53,7 +53,7 @@ const handler = async (req: Request): Promise<Response> => {
         <div style="margin: 30px 0; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #4CAF50;">
           <p style="margin: 0;"><strong>Peoria Lawn Care</strong></p>
           <p style="margin: 5px 0;">Phone: (623) 845-2626</p>
-          <p style="margin: 5px 0;">Email: info@peorialawncare.com</p>
+          <p style="margin: 5px 0;">Email: info@peoria-lawncare.com</p>
         </div>
         <p>Best regards,</p>
         <p>The Peoria Lawn Care Team</p>
@@ -77,7 +77,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send confirmation email to the customer
     console.log("Attempting to send customer confirmation email...");
     const customerEmailResponse = await resend.emails.send({
-      from: "Peoria Lawn Care <info@peorialawncare.com>", // Use your verified domain here
+      from: "Peoria Lawn Care <info@peoria-lawncare.com>", // Using the correct verified domain
       to: [email],
       subject: "Thank You for Contacting Peoria Lawn Care",
       html: customerEmailTemplate,
@@ -91,7 +91,7 @@ const handler = async (req: Request): Promise<Response> => {
       
       // Send to both business owner email and the additional recipient
       const notificationEmailResponse = await resend.emails.send({
-        from: "Peoria Lawn Care <info@peorialawncare.com>", // Use your verified domain here
+        from: "Peoria Lawn Care <info@peoria-lawncare.com>", // Using the correct verified domain
         to: ["newkfritz@gmail.com", "collabmastermillion@gmail.com"],
         subject: `New Contact Form Submission from ${name}`,
         html: notificationEmailTemplate,
