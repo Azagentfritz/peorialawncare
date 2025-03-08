@@ -29,8 +29,28 @@ export async function sendContactEmail(data: {
       };
     }
 
-    // For now we're just storing the contact, but we could also implement email sending here
-    console.log('Contact submission stored successfully');
+    // Send confirmation email using the Supabase Edge Function
+    try {
+      const emailResponse = await supabase.functions.invoke('send-confirmation', {
+        body: {
+          name: data.name,
+          email: data.from,
+          service: data.service
+        }
+      });
+      
+      console.log('Confirmation email response:', emailResponse);
+      
+      if (!emailResponse.error) {
+        console.log('Confirmation email sent successfully');
+      } else {
+        // Just log the error but don't fail the whole request
+        console.error('Error sending confirmation email:', emailResponse.error);
+      }
+    } catch (emailError) {
+      // Just log the error but don't fail the whole request
+      console.error('Exception sending confirmation email:', emailError);
+    }
     
     return { 
       success: true, 
