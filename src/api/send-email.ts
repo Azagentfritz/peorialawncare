@@ -50,7 +50,7 @@ export async function sendContactEmail(data: {
     `;
 
     // Send email using Resend
-    const { data: emailData, error } = await resend.emails.send({
+    const result = await resend.emails.send({
       from: 'Peoria Lawn Care <contact@peoria-lawncare.com>',
       to: ['contact@peoria-lawncare.com'], // Change this to your actual business email
       subject: `New Website Inquiry: ${data.service || 'General Inquiry'}`,
@@ -58,8 +58,9 @@ export async function sendContactEmail(data: {
       reply_to: data.from
     });
 
-    if (error) {
-      console.error('Resend API error:', error);
+    // Check if there was an error
+    if (result.error) {
+      console.error('Resend API error:', result.error);
       return {
         success: false,
         error: "Failed to send email. Please try again later."
