@@ -40,20 +40,20 @@ const ArtificialTurfGallery = () => {
     {
       id: 5,
       image: "/lovable-uploads/d5b4ee72-8c62-4725-a9f0-58473b18b18a.png",
-      title: "Pergola & Turf Installation",
-      description: "Combined project featuring a shade pergola and artificial turf landscaping."
+      title: "Turf Installation",
+      description: "Artificial turf landscaping for a beautiful, low-maintenance yard."
     },
     {
       id: 6,
       image: "/lovable-uploads/37190635-0531-436f-a4e5-a893a2678bd5.png",
-      title: "Backyard Putting Green with Pergola",
-      description: "Backyard design with custom putting green and pergola for shade."
+      title: "Backyard Putting Green",
+      description: "Backyard design with custom putting green for practice and entertainment."
     },
     {
       id: 7,
       image: "/lovable-uploads/596f2dfa-437d-4157-85c2-955d5e9b365f.png",
-      title: "Modern Turf Installation with Pergola",
-      description: "Modern backyard featuring artificial turf, concrete pavers, and a pergola."
+      title: "Modern Turf Installation",
+      description: "Modern backyard featuring artificial turf and concrete pavers."
     }
   ];
 
