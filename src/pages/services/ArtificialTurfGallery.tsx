@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, X, Flower2, Lightbulb } from "lucide-react";
+import { ArrowLeft, ArrowRight, X, Flower2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
@@ -101,18 +101,13 @@ const ArtificialTurfGallery = () => {
                 <ArrowLeft className="mr-2" size={16} />
                 <span>Back to Artificial Turf Service</span>
               </Link>
-              <div className="flex space-x-4 mb-6">
-                <div className="w-12 h-12 bg-lawn-50 rounded-lg flex items-center justify-center text-lawn-600">
-                  <Flower2 size={24} />
-                </div>
-                <div className="w-12 h-12 bg-lawn-50 rounded-lg flex items-center justify-center text-lawn-600">
-                  <Lightbulb size={24} />
-                </div>
+              <div className="w-16 h-16 bg-lawn-50 rounded-lg flex items-center justify-center text-lawn-600 mb-6">
+                <Flower2 size={28} />
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">Turf & Light Installation Gallery</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">Artificial Turf Gallery</h1>
               <div className="w-20 h-1 bg-lawn-500 mx-auto mb-6"></div>
               <p className="text-xl max-w-3xl mx-auto text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
-                Browse our collection of artificial turf and outdoor lighting installations that transform outdoor spaces
+                Browse our collection of artificial turf installations, from putting greens to full yard transformations
               </p>
             </div>
           </div>
@@ -152,12 +147,12 @@ const ArtificialTurfGallery = () => {
         {/* Call to Action */}
         <section className="bg-lawn-50 py-16">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-8">Ready for a Beautiful, Well-Lit Outdoor Space?</h2>
+            <h2 className="text-3xl font-bold mb-8">Ready for a Beautiful, Low-Maintenance Lawn?</h2>
             <Link 
               to="/#contact" 
               className="inline-block bg-lawn-500 hover:bg-lawn-600 text-white px-8 py-3 rounded-full transition-all duration-300 text-lg font-medium shadow-md hover:shadow-lg"
             >
-              Request Your Installation Quote
+              Request Your Turf Installation Quote
             </Link>
           </div>
         </section>
