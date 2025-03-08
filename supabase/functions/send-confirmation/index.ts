@@ -42,55 +42,62 @@ const handler = async (req: Request): Promise<Response> => {
       ).join(' ');
     }
 
+    // HTML template for emails
+    const customerEmailTemplate = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
+        <h1 style="color: #4CAF50; margin-bottom: 20px;">Thank You for Contacting Us</h1>
+        <p>Dear ${name},</p>
+        <p>Thank you for reaching out to Peoria Lawn Care. We have received your inquiry${service ? ` about our ${formattedService} service` : ''}.</p>
+        <p>Our team will review your message and get back to you as soon as possible, typically within 1-2 business days.</p>
+        <p>In the meantime, feel free to explore our website for more information about our services.</p>
+        <div style="margin: 30px 0; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #4CAF50;">
+          <p style="margin: 0;"><strong>Peoria Lawn Care</strong></p>
+          <p style="margin: 5px 0;">Phone: (623) 845-2626</p>
+          <p style="margin: 5px 0;">Email: info@peorialawncare.com</p>
+        </div>
+        <p>Best regards,</p>
+        <p>The Peoria Lawn Care Team</p>
+      </div>
+    `;
+
+    const notificationEmailTemplate = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
+        <h1 style="color: #4CAF50; margin-bottom: 20px;">New Website Contact Form Submission</h1>
+        <p><strong>Customer:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
+        ${service ? `<p><strong>Service Requested:</strong> ${formattedService}</p>` : ''}
+        <div style="margin: 20px 0; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #4CAF50;">
+          <p style="margin: 0;"><strong>Message:</strong></p>
+          <p style="margin-top: 10px;">${message || 'No message provided'}</p>
+        </div>
+      </div>
+    `;
+
     // Send confirmation email to the customer
     console.log("Attempting to send customer confirmation email...");
     const customerEmailResponse = await resend.emails.send({
       from: "Peoria Lawn Care <onboarding@resend.dev>",
       to: [email],
       subject: "Thank You for Contacting Peoria Lawn Care",
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
-          <h1 style="color: #4CAF50; margin-bottom: 20px;">Thank You for Contacting Us</h1>
-          <p>Dear ${name},</p>
-          <p>Thank you for reaching out to Peoria Lawn Care. We have received your inquiry${service ? ` about our ${formattedService} service` : ''}.</p>
-          <p>Our team will review your message and get back to you as soon as possible, typically within 1-2 business days.</p>
-          <p>In the meantime, feel free to explore our website for more information about our services.</p>
-          <div style="margin: 30px 0; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #4CAF50;">
-            <p style="margin: 0;"><strong>Peoria Lawn Care</strong></p>
-            <p style="margin: 5px 0;">Phone: (623) 845-2626</p>
-            <p style="margin: 5px 0;">Email: info@peorialawncare.com</p>
-          </div>
-          <p>Best regards,</p>
-          <p>The Peoria Lawn Care Team</p>
-        </div>
-      `,
+      html: customerEmailTemplate,
     });
 
     console.log("Customer email sent successfully:", customerEmailResponse);
 
-    // Send notification email to the business owner
-    if (message) {
-      console.log("Attempting to send notification email to business owner...");
+    // Send notification emails to the business owner and the additional email
+    if (message || service || phone) {
+      console.log("Attempting to send notification emails...");
+      
+      // Send to both business owner email and the additional recipient
       const notificationEmailResponse = await resend.emails.send({
         from: "Peoria Lawn Care <onboarding@resend.dev>",
-        to: ["newkfritz@gmail.com"],
+        to: ["newkfritz@gmail.com", "collabmastermillion@gmail.com"],
         subject: `New Contact Form Submission from ${name}`,
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
-            <h1 style="color: #4CAF50; margin-bottom: 20px;">New Website Contact Form Submission</h1>
-            <p><strong>Customer:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
-            ${service ? `<p><strong>Service Requested:</strong> ${formattedService}</p>` : ''}
-            <div style="margin: 20px 0; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #4CAF50;">
-              <p style="margin: 0;"><strong>Message:</strong></p>
-              <p style="margin-top: 10px;">${message}</p>
-            </div>
-          </div>
-        `,
+        html: notificationEmailTemplate,
       });
 
-      console.log("Notification email sent successfully:", notificationEmailResponse);
+      console.log("Notification emails sent successfully:", notificationEmailResponse);
     }
 
     return new Response(JSON.stringify({ success: true }), {
