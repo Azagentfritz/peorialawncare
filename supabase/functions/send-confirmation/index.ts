@@ -14,6 +14,8 @@ interface ContactEmailRequest {
   name: string;
   email: string;
   service?: string;
+  message?: string;
+  phone?: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -23,7 +25,7 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, service }: ContactEmailRequest = await req.json();
+    const { name, email, service, message, phone }: ContactEmailRequest = await req.json();
 
     console.log(`Sending confirmation email to ${email} for ${name}`);
 
@@ -35,7 +37,8 @@ const handler = async (req: Request): Promise<Response> => {
       ).join(' ');
     }
 
-    const emailResponse = await resend.emails.send({
+    // Send confirmation email to the customer
+    const customerEmailResponse = await resend.emails.send({
       from: "Peoria Lawn Care <onboarding@resend.dev>",
       to: [email],
       subject: "Thank You for Contacting Peoria Lawn Care",
@@ -57,7 +60,31 @@ const handler = async (req: Request): Promise<Response> => {
       `,
     });
 
-    console.log("Email sent successfully:", emailResponse);
+    console.log("Customer email sent successfully:", customerEmailResponse);
+
+    // Send notification email to the business owner
+    if (message) {
+      const notificationEmailResponse = await resend.emails.send({
+        from: "Peoria Lawn Care <onboarding@resend.dev>",
+        to: ["newkfritz@gmail.com"],
+        subject: `New Contact Form Submission from ${name}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
+            <h1 style="color: #4CAF50; margin-bottom: 20px;">New Website Contact Form Submission</h1>
+            <p><strong>Customer:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
+            ${service ? `<p><strong>Service Requested:</strong> ${formattedService}</p>` : ''}
+            <div style="margin: 20px 0; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #4CAF50;">
+              <p style="margin: 0;"><strong>Message:</strong></p>
+              <p style="margin-top: 10px;">${message}</p>
+            </div>
+          </div>
+        `,
+      });
+
+      console.log("Notification email sent successfully:", notificationEmailResponse);
+    }
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,

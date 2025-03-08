@@ -35,7 +35,9 @@ export async function sendContactEmail(data: {
         body: {
           name: data.name,
           email: data.from,
-          service: data.service
+          service: data.service,
+          message: data.message,
+          phone: data.phone
         }
       });
       
