@@ -42,6 +42,18 @@ const ArtificialTurfGallery = () => {
       image: "/lovable-uploads/d5b4ee72-8c62-4725-a9f0-58473b18b18a.png",
       title: "Pergola & Turf Installation",
       description: "Combined project featuring a shade pergola and artificial turf landscaping."
+    },
+    {
+      id: 6,
+      image: "/lovable-uploads/37190635-0531-436f-a4e5-a893a2678bd5.png",
+      title: "Backyard Putting Green with Pergola",
+      description: "Backyard design with custom putting green and pergola for shade."
+    },
+    {
+      id: 7,
+      image: "/lovable-uploads/596f2dfa-437d-4157-85c2-955d5e9b365f.png",
+      title: "Modern Turf Installation with Pergola",
+      description: "Modern backyard featuring artificial turf, concrete pavers, and a pergola."
     }
   ];
 
@@ -112,8 +124,19 @@ const ArtificialTurfGallery = () => {
                   style={{ animationDelay: `${index * 100}ms` }}
                   onClick={() => openLightbox(index)}
                 >
-                  <div className="aspect-w-4 aspect-h-3 h-64 overflow-hidden">
-                    {/* Image has been removed */}
+                  <div className="aspect-w-4 aspect-h-3">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-end">
+                      <div className="p-4 w-full bg-gradient-to-t from-black/70 to-transparent">
+                        <h3 className="text-white font-semibold transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                          {item.title}
+                        </h3>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}

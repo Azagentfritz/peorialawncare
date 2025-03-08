@@ -102,7 +102,7 @@ const ArtificialTurf = () => {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Our Artificial Turf Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
                   src="/lovable-uploads/3f460f11-b44e-4f31-8871-372978ebb5b9.png" 
@@ -125,6 +125,25 @@ const ArtificialTurf = () => {
                 />
               </div>
             </div>
+            
+            {/* Added new row for the new images */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-3xl mx-auto">
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <img 
+                  src="/lovable-uploads/37190635-0531-436f-a4e5-a893a2678bd5.png" 
+                  alt="Backyard Artificial Turf with Putting Green" 
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <img 
+                  src="/lovable-uploads/596f2dfa-437d-4157-85c2-955d5e9b365f.png" 
+                  alt="Artificial Turf Installation with Pergola" 
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+            
             <div className="text-center mt-8">
               <Link 
                 to="/services/artificial-turf-gallery"
