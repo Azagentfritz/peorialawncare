@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Send, Loader2 } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
@@ -45,13 +46,38 @@ const ContactForm = () => {
     try {
       console.log("Submitting form data:", formData);
       
-      toast({
-        title: "Email Service Disabled",
-        description: "The email service has been removed and needs to be reinstalled.",
-        variant: "destructive",
+      // Send data to the API endpoint
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          from: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message
+        }),
       });
+
+      const result = await response.json();
       
-      setIsSubmitSuccess(false);
+      if (result.success) {
+        toast({
+          title: "Success",
+          description: result.message || "Your message has been sent successfully!",
+          variant: "default",
+        });
+        setIsSubmitSuccess(true);
+      } else {
+        toast({
+          title: "Error",
+          description: result.error || "There was a problem with your submission.",
+          variant: "destructive",
+        });
+        setIsSubmitSuccess(false);
+      }
       
     } catch (error) {
       console.error("Error:", error);
