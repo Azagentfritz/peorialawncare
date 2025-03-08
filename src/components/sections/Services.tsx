@@ -9,31 +9,31 @@ const Services = () => {
       icon: <PenTool size={28} />,
       title: "Landscape Design",
       description: "Custom landscape design services that transform your outdoor space into a beautiful, functional extension of your home.",
-      slug: "landscape-design"
+      path: "/services/landscape-design"
     },
     {
       icon: <Lightbulb size={28} />,
       title: "Outdoor Lighting",
       description: "Professional lighting design and installation to enhance your landscape's beauty after dark while improving safety and security.",
-      slug: "outdoor-lighting"
+      path: "/services/outdoor-lighting"
     },
     {
       icon: <Droplets size={28} />,
       title: "Irrigation Systems",
       description: "Installation and maintenance of efficient irrigation systems to ensure optimal watering for your landscape.",
-      slug: "irrigation-systems"
+      path: "/services/irrigation-systems"
     },
     {
       icon: <Flower2 size={28} />,
       title: "Artificial Turf",
       description: "High-quality artificial turf installation that provides a lush, green lawn without the maintenance or water requirements.",
-      slug: "artificial-turf"
+      path: "/services/artificial-turf"
     },
     {
       icon: <SunMedium size={28} />,
       title: "Outdoor Features",
       description: "Custom fire pits, outdoor kitchens, and other features that enhance the functionality and enjoyment of your outdoor space.",
-      slug: "outdoor-features"
+      path: "/services/outdoor-features"
     },
   ];
 
@@ -65,7 +65,7 @@ const Services = () => {
                   icon={service.icon}
                   title={service.title}
                   description={service.description}
-                  slug={service.slug}
+                  path={service.path}
                 />
               </div>
             ))}
@@ -83,7 +83,7 @@ const Services = () => {
                   icon={service.icon}
                   title={service.title}
                   description={service.description}
-                  slug={service.slug}
+                  path={service.path}
                 />
               </div>
             ))}
@@ -101,7 +101,7 @@ const Services = () => {
                   icon={service.icon}
                   title={service.title}
                   description={service.description}
-                  slug={service.slug}
+                  path={service.path}
                 />
               </div>
             ))}

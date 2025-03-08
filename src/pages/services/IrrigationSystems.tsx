@@ -1,132 +1,116 @@
 
-import { useEffect } from "react";
-import ServiceLayout from "@/components/layout/ServiceLayout";
-import { Button } from "@/components/ui/button";
+import { Droplets } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Droplets, Clock, Sprout } from "lucide-react";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import FloatingCallButton from "@/components/ui/FloatingCallButton";
 
 const IrrigationSystems = () => {
-  useEffect(() => {
-    // Update page title
-    document.title = "Irrigation Systems | Peoria Lawn Care";
-    // Scroll to top
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <ServiceLayout
-      title="Irrigation Systems"
-      description="Efficient watering solutions for a healthy, vibrant landscape"
-      heroImage="/lovable-uploads/c2a0be93-b333-48a3-a6a3-adf7b911ea25.png"
-    >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 className="text-3xl font-semibold mb-6 text-lawn-800">Smart Irrigation Solutions</h2>
-          <p className="text-gray-700 mb-4 leading-relaxed">
-            In the Phoenix area, efficient water use is crucial. Our custom irrigation systems are designed to 
-            deliver the right amount of water to your landscape at the right time, promoting plant health while 
-            conserving this precious resource. From drip irrigation for garden beds to sprinkler systems for lawns, 
-            we create water-efficient solutions tailored to your specific landscape needs.
-          </p>
-          <p className="text-gray-700 mb-6 leading-relaxed">
-            Our irrigation experts use the latest technology, including smart controllers, rain sensors, and 
-            high-efficiency spray heads to minimize water waste. We also offer irrigation system repairs, 
-            upgrades, and seasonal maintenance to ensure your system continues to operate at peak efficiency 
-            year after year.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link to="/#contact">
-              <Button size="lg" className="bg-lawn-500 hover:bg-lawn-600">
-                Get an Irrigation Estimate
-              </Button>
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      
+      <main className="flex-grow pt-20">
+        {/* Hero Section */}
+        <section className="relative bg-gray-900 text-white py-20">
+          <div className="absolute inset-0 opacity-70 bg-gradient-to-r from-gray-900 to-gray-800"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-lawn-50 rounded-lg flex items-center justify-center text-lawn-600 mb-6">
+                <Droplets size={28} />
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">Irrigation Systems</h1>
+              <div className="w-20 h-1 bg-lawn-500 mx-auto mb-6"></div>
+              <p className="text-xl max-w-3xl mx-auto text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                Installation and maintenance of efficient irrigation systems to ensure optimal watering 
+                for your landscape while conserving water.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Content Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold mb-6">Smart Water Management</h2>
+                <p className="text-gray-600 mb-4">
+                  Our professionally designed and installed irrigation systems deliver the right amount of water 
+                  exactly where and when your landscape needs it, eliminating waste while keeping your plants 
+                  healthy and vibrant.
+                </p>
+                <p className="text-gray-600 mb-6">
+                  With water conservation becoming increasingly important in Arizona, our smart irrigation 
+                  solutions help you maintain a beautiful landscape while reducing water usage and lowering 
+                  your utility bills.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <div className="text-lawn-500 mr-3 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <p>Smart controllers with weather-based adjustments</p>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="text-lawn-500 mr-3 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <p>Drip irrigation for precise water delivery</p>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="text-lawn-500 mr-3 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <p>Seasonal maintenance and system inspections</p>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="text-lawn-500 mr-3 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <p>Water-efficient system upgrades and repairs</p>
+                  </div>
+                </div>
+              </div>
+              <div className="relative rounded-lg overflow-hidden shadow-xl">
+                <img 
+                  src="/lovable-uploads/906f7e80-d2cf-494e-ba5d-ed7c92cda4c9.png" 
+                  alt="Water Feature" 
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action */}
+        <section className="bg-lawn-50 py-16">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold mb-8">Ready for an Efficient Irrigation System?</h2>
+            <Link 
+              to="/#contact" 
+              className="inline-block bg-lawn-500 hover:bg-lawn-600 text-white px-8 py-3 rounded-full transition-all duration-300 text-lg font-medium shadow-md hover:shadow-lg"
+            >
+              Request Your Irrigation Assessment
             </Link>
           </div>
-        </div>
-        <div className="grid grid-cols-1 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-100">
-            <div className="flex items-start gap-4">
-              <div className="bg-lawn-100 p-3 rounded-full">
-                <Droplets className="h-6 w-6 text-lawn-600" />
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-lawn-800 mb-2">Water Conservation</h3>
-                <p className="text-gray-600">Our systems are designed to reduce water waste by up to 40% compared to traditional irrigation methods.</p>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-100">
-            <div className="flex items-start gap-4">
-              <div className="bg-lawn-100 p-3 rounded-full">
-                <Clock className="h-6 w-6 text-lawn-600" />
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-lawn-800 mb-2">Smart Scheduling</h3>
-                <p className="text-gray-600">Automated controllers adjust watering schedules based on weather conditions and seasonal needs.</p>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-100">
-            <div className="flex items-start gap-4">
-              <div className="bg-lawn-100 p-3 rounded-full">
-                <Sprout className="h-6 w-6 text-lawn-600" />
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-lawn-800 mb-2">Plant Health Focus</h3>
-                <p className="text-gray-600">Precision watering delivers moisture directly to plant roots, promoting healthier growth and disease resistance.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-16">
-        <h3 className="text-2xl font-semibold mb-8 text-lawn-800 text-center">Our Irrigation Services</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white p-8 rounded-lg shadow-md border border-gray-100">
-            <h4 className="text-xl font-medium mb-4 text-lawn-700">System Design & Installation</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2">
-                <span className="text-lawn-500 font-bold">•</span>
-                <span className="text-gray-700">Custom design based on your landscape's specific needs</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-lawn-500 font-bold">•</span>
-                <span className="text-gray-700">Professional installation with minimal disruption to existing landscape</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-lawn-500 font-bold">•</span>
-                <span className="text-gray-700">Integration with smart home systems and weather stations</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-lawn-500 font-bold">•</span>
-                <span className="text-gray-700">Quality components with manufacturer warranties</span>
-              </li>
-            </ul>
-          </div>
-          <div className="bg-white p-8 rounded-lg shadow-md border border-gray-100">
-            <h4 className="text-xl font-medium mb-4 text-lawn-700">Maintenance & Repairs</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2">
-                <span className="text-lawn-500 font-bold">•</span>
-                <span className="text-gray-700">Seasonal system inspections and adjustments</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-lawn-500 font-bold">•</span>
-                <span className="text-gray-700">Prompt repair of leaks, broken heads, and controller issues</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-lawn-500 font-bold">•</span>
-                <span className="text-gray-700">System winterization and spring startup services</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-lawn-500 font-bold">•</span>
-                <span className="text-gray-700">System upgrades and efficiency improvements</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </ServiceLayout>
+        </section>
+      </main>
+      
+      <Footer />
+      <FloatingCallButton 
+        phoneNumber="623-845-2626"
+        className="bottom-6 right-6"
+      />
+    </div>
   );
 };
 
