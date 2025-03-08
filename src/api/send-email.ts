@@ -1,10 +1,8 @@
 
-import { Resend } from 'resend';
 import { ApiResponse } from './index';
 
-// Initialize Resend with your API key
-const resend = new Resend('re_7y2Me4us_jQUMqPoaCFsUgXwqtHYRTZKA');
-
+// We'll use a mock success response for the preview environment
+// In a real implementation, you'd use a backend service/API to handle this
 export async function sendContactEmail(data: {
   from: string;
   name: string;
@@ -18,47 +16,22 @@ export async function sendContactEmail(data: {
       message: data.message.substring(0, 30) + (data.message.length > 30 ? '...' : '')
     });
 
-    // Email to owner/business (primary recipient)
-    const ownerEmailResult = await resend.emails.send({
-      from: 'contact@peoria-lawncare.com',
-      to: ['azagentfritz@gmail.com', 'newkfritz@gmail.com'],
-      subject: `New Contact Form Submission from ${data.name}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${data.name}</p>
-        <p><strong>Email:</strong> ${data.from}</p>
-        <p><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
-        <p><strong>Service Interested In:</strong> ${data.service || 'Not specified'}</p>
-        <p><strong>Message:</strong></p>
-        <p>${data.message.replace(/\n/g, '<br>')}</p>
-      `
-    });
-
-    console.log('Owner email sent:', ownerEmailResult);
-
-    // Confirmation email to customer
-    const customerEmailResult = await resend.emails.send({
-      from: 'contact@peoria-lawncare.com',
-      to: data.from,
-      subject: 'Thank You for Contacting Peoria Lawn Care',
-      html: `
-        <h2>Thank You for Contacting Peoria Lawn Care</h2>
-        <p>Hello ${data.name},</p>
-        <p>We appreciate you reaching out to us. This is a confirmation that we've received your message about ${data.service || 'your inquiry'}.</p>
-        <p>Our team will review your request and get back to you within 24 hours. If you need immediate assistance, please call us at (623) 845-2626.</p>
-        <p>Here's a summary of the information you provided:</p>
-        <ul>
-          <li><strong>Service interested in:</strong> ${data.service || 'Not specified'}</li>
-          <li><strong>Your message:</strong> "${data.message.substring(0, 100)}${data.message.length > 100 ? '...' : ''}"</li>
-        </ul>
-        <p>Thank you for considering Peoria Lawn Care for your landscaping needs.</p>
-        <p>Best regards,<br>The Peoria Lawn Care Team</p>
-      `
-    });
-
-    console.log('Customer email sent:', customerEmailResult);
-
-    return { success: true };
+    // In a preview/development environment, we'll simulate success
+    // without actually sending emails to avoid exposing API keys
+    
+    // For production, you would implement:
+    // 1. Server-side API endpoint that securely uses Resend
+    // 2. Use environment variables for API keys
+    // 3. Add proper CORS headers if needed
+    
+    // Simulate processing delay
+    await new Promise(resolve => setTimeout(resolve, 800));
+    
+    // Return success response
+    return { 
+      success: true,
+      message: "Email successfully simulated in preview environment"
+    };
   } catch (error) {
     console.error('Error sending email:', error);
     // Return a more structured error response

@@ -5,6 +5,7 @@ import { sendContactEmail } from './send-email';
 export type ApiResponse = { 
   success: boolean; 
   error?: string;
+  message?: string;
 };
 
 // This file creates a mapping between API routes and their handlers
@@ -12,6 +13,7 @@ export const apiRoutes = {
   '/api/send-email': async (request: Request): Promise<Response | ApiResponse> => {
     if (request.method === 'POST') {
       try {
+        console.log(`Handling API request to /api/send-email`);
         const data = await request.json();
         return await sendContactEmail(data);
       } catch (error) {

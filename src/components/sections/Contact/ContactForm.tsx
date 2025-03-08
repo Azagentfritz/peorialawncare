@@ -42,7 +42,6 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setIsSubmitSuccess(false);
 
     try {
       console.log("Submitting form data:", formData);
@@ -65,7 +64,7 @@ const ContactForm = () => {
       console.log("Form submission result:", result);
 
       if (!response.ok || result.success === false) {
-        throw new Error(result.error || "Failed to send email");
+        throw new Error(result.error || "Failed to send message");
       }
 
       // Show success notification
@@ -78,14 +77,6 @@ const ContactForm = () => {
       // Set success state
       setIsSubmitSuccess(true);
       
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: ""
-      });
     } catch (error) {
       console.error("Error sending email:", error);
       toast({
@@ -93,6 +84,7 @@ const ContactForm = () => {
         description: error instanceof Error ? error.message : "There was a problem sending your message. Please try again.",
         variant: "destructive",
       });
+      setIsSubmitSuccess(false);
     } finally {
       setIsSubmitting(false);
     }
