@@ -1,5 +1,5 @@
 
-import { Flower2 } from "lucide-react";
+import { Flower2, Image } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -25,6 +25,13 @@ const ArtificialTurf = () => {
                 High-quality artificial turf installation that provides a lush, green lawn without 
                 the maintenance or water requirements.
               </p>
+              <Link 
+                to="/services/artificial-turf-gallery"
+                className="mt-6 inline-flex items-center px-5 py-2 bg-lawn-500 hover:bg-lawn-600 text-white rounded-full transition-all shadow-md"
+              >
+                <Image size={18} className="mr-2" />
+                View Our Artificial Turf Gallery
+              </Link>
             </div>
           </div>
         </section>
@@ -117,6 +124,15 @@ const ArtificialTurf = () => {
                   className="w-full h-auto"
                 />
               </div>
+            </div>
+            <div className="text-center mt-8">
+              <Link 
+                to="/services/artificial-turf-gallery"
+                className="inline-flex items-center px-6 py-3 bg-lawn-100 hover:bg-lawn-200 text-lawn-700 rounded-lg transition-colors"
+              >
+                <Image size={20} className="mr-2" />
+                View Full Gallery
+              </Link>
             </div>
           </div>
         </section>

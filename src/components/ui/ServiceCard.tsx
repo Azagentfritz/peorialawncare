@@ -1,21 +1,28 @@
 
 import { ReactNode, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface ServiceCardProps {
   icon: ReactNode;
   title: string;
   description: string;
-  path: string; // We'll keep this in the props but not use it for navigation
+  path: string;
 }
 
-const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
+const ServiceCard = ({ icon, title, description, path }: ServiceCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
+  
+  const handleClick = () => {
+    navigate(path);
+  };
   
   return (
     <div 
-      className="group bg-white rounded-lg shadow-md p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 h-full flex flex-col"
+      className="group bg-white rounded-lg shadow-md p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 h-full flex flex-col cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={handleClick}
     >
       <div className="relative">
         <div className="w-16 h-16 bg-lawn-50 rounded-lg flex items-center justify-center text-lawn-600 mb-6 group-hover:bg-lawn-500 group-hover:text-white transition-all duration-300 transform group-hover:scale-110">

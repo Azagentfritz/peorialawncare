@@ -1,7 +1,8 @@
 
-import { Droplets, Flower2, TreePine, PenTool, SunMedium, Lightbulb } from "lucide-react";
+import { Droplets, Flower2, TreePine, PenTool, SunMedium, Lightbulb, Image } from "lucide-react";
 import ServiceCard from "../ui/ServiceCard";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -35,6 +36,22 @@ const Services = () => {
       description: "Custom fire pits, outdoor kitchens, and other features that enhance the functionality and enjoyment of your outdoor space.",
       path: "/services/outdoor-features"
     },
+  ];
+
+  // Gallery links for services that have galleries
+  const galleryLinks = [
+    {
+      title: "Artificial Turf",
+      path: "/services/artificial-turf-gallery"
+    },
+    {
+      title: "Outdoor Features",
+      path: "/services/outdoor-features-gallery"
+    },
+    {
+      title: "Outdoor Lighting",
+      path: "/services/outdoor-lighting-gallery"
+    }
   ];
 
   return (
@@ -108,7 +125,33 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="text-center mt-12">
+        {/* Gallery Links */}
+        <div className="max-w-2xl mx-auto mt-12 mb-8 bg-white rounded-lg shadow-md p-6">
+          <div className="text-center mb-6">
+            <div className="flex items-center justify-center mb-4">
+              <Image size={20} className="text-lawn-500 mr-2" />
+              <h3 className="text-xl font-semibold">Project Galleries</h3>
+            </div>
+            <p className="text-gray-600 text-sm">
+              Browse our project galleries to see examples of our work in these service areas:
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4">
+            {galleryLinks.map((gallery, index) => (
+              <Link 
+                key={index}
+                to={gallery.path}
+                className="inline-flex items-center px-4 py-2 bg-lawn-100 hover:bg-lawn-200 text-lawn-700 
+                  rounded-md transition-colors duration-200"
+              >
+                <Image size={16} className="mr-2" />
+                {gallery.title} Gallery
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center mt-8">
           <a 
             href="#contact" 
             className="inline-block bg-lawn-500 hover:bg-lawn-600 text-white px-8 py-3 rounded-full transition-all duration-300 text-lg font-medium shadow-md hover:shadow-lg"

@@ -12,6 +12,9 @@ import OutdoorLighting from "./pages/services/OutdoorLighting";
 import IrrigationSystems from "./pages/services/IrrigationSystems";
 import ArtificialTurf from "./pages/services/ArtificialTurf";
 import OutdoorFeatures from "./pages/services/OutdoorFeatures";
+import ArtificialTurfGallery from "./pages/services/ArtificialTurfGallery";
+import OutdoorFeaturesGallery from "./pages/services/OutdoorFeaturesGallery";
+import OutdoorLightingGallery from "./pages/services/OutdoorLightingGallery";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +32,12 @@ const App = () => (
           <Route path="/services/irrigation-systems" element={<IrrigationSystems />} />
           <Route path="/services/artificial-turf" element={<ArtificialTurf />} />
           <Route path="/services/outdoor-features" element={<OutdoorFeatures />} />
+          
+          {/* Gallery Pages */}
+          <Route path="/services/artificial-turf-gallery" element={<ArtificialTurfGallery />} />
+          <Route path="/services/outdoor-features-gallery" element={<OutdoorFeaturesGallery />} />
+          <Route path="/services/outdoor-lighting-gallery" element={<OutdoorLightingGallery />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

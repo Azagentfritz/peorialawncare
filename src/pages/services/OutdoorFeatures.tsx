@@ -1,5 +1,5 @@
 
-import { SunMedium } from "lucide-react";
+import { SunMedium, Image } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -25,6 +25,13 @@ const OutdoorFeatures = () => {
                 Custom fire pits, outdoor kitchens, and other features that enhance the functionality 
                 and enjoyment of your outdoor space.
               </p>
+              <Link 
+                to="/services/outdoor-features-gallery"
+                className="mt-6 inline-flex items-center px-5 py-2 bg-lawn-500 hover:bg-lawn-600 text-white rounded-full transition-all shadow-md"
+              >
+                <Image size={18} className="mr-2" />
+                View Our Outdoor Features Gallery
+              </Link>
             </div>
           </div>
         </section>
@@ -110,6 +117,15 @@ const OutdoorFeatures = () => {
                   className="w-full h-auto"
                 />
               </div>
+            </div>
+            <div className="text-center mt-8">
+              <Link 
+                to="/services/outdoor-features-gallery"
+                className="inline-flex items-center px-6 py-3 bg-lawn-100 hover:bg-lawn-200 text-lawn-700 rounded-lg transition-colors"
+              >
+                <Image size={20} className="mr-2" />
+                View Full Gallery
+              </Link>
             </div>
           </div>
         </section>
