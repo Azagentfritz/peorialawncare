@@ -1,26 +1,19 @@
 
 import { ReactNode, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 interface ServiceCardProps {
   icon: ReactNode;
   title: string;
   description: string;
-  path: string;
+  path: string; // We'll keep this in the props but not use it for navigation
 }
 
-const ServiceCard = ({ icon, title, description, path }: ServiceCardProps) => {
-  const navigate = useNavigate();
+const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   
-  const handleClick = () => {
-    navigate(path);
-  };
-
   return (
     <div 
-      className="group bg-white rounded-lg shadow-md p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 h-full flex flex-col cursor-pointer"
-      onClick={handleClick}
+      className="group bg-white rounded-lg shadow-md p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 h-full flex flex-col"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -30,7 +23,7 @@ const ServiceCard = ({ icon, title, description, path }: ServiceCardProps) => {
         </div>
         {isHovered && (
           <div className="absolute -right-2 -top-2 bg-lawn-500 text-white text-xs font-semibold px-2 py-1 rounded-full animate-fade-in">
-            Click
+            Service
           </div>
         )}
       </div>
