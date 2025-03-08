@@ -45,10 +45,6 @@ const Services = () => {
       path: "/services/artificial-turf-gallery"
     },
     {
-      title: "Outdoor Features",
-      path: "/services/outdoor-features-gallery"
-    },
-    {
       title: "Outdoor Lighting",
       path: "/services/outdoor-lighting-gallery"
     }
