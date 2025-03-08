@@ -1,6 +1,12 @@
 
 import { sendContactEmail } from './send-email';
 
+// Define a common response type for API handlers
+export type ApiResponse = { 
+  success: boolean; 
+  error?: string;
+};
+
 // This file creates a mapping between API routes and their handlers
 export const apiRoutes = {
   '/api/send-email': async (request: Request) => {

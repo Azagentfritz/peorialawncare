@@ -11,9 +11,24 @@ export async function handleApiRequest(request: Request) {
       const handler = apiRoutes[pathname as keyof typeof apiRoutes];
       const result = await handler(request);
       
-      // Return the API response
+      // Check if result is an API response object with success property
+      // or a standard Response object
+      if (!(result instanceof Response) && 'success' in result) {
+        // Return the API response
+        return new Response(JSON.stringify(result), {
+          status: result.success === false ? 400 : 200,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+      } else if (result instanceof Response) {
+        // If it's already a Response object, return it directly
+        return result;
+      }
+      
+      // Fallback for any other type of result
       return new Response(JSON.stringify(result), {
-        status: result.success === false ? 400 : 200,
+        status: 200,
         headers: {
           'Content-Type': 'application/json'
         }
