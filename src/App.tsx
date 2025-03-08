@@ -15,6 +15,7 @@ import OutdoorFeatures from "./pages/services/OutdoorFeatures";
 import ArtificialTurfGallery from "./pages/services/ArtificialTurfGallery";
 import OutdoorFeaturesGallery from "./pages/services/OutdoorFeaturesGallery";
 import OutdoorLightingGallery from "./pages/services/OutdoorLightingGallery";
+import ScrollToTop from "./components/utility/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/gallery" element={<Gallery />} />
