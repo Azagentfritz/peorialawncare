@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Phone, Sprout } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
@@ -70,7 +69,6 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <ul className="flex space-x-8">
               {navLinks.map((link) => (
@@ -95,7 +93,6 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-2xl"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -121,7 +118,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         <div
           className={`md:hidden absolute left-0 right-0 bg-white shadow-lg transition-all duration-300 origin-top ${
             isMobileMenuOpen
