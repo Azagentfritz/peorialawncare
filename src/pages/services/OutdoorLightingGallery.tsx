@@ -30,6 +30,12 @@ const OutdoorLightingGallery = () => {
       image: "/lovable-uploads/6d884196-127a-4f83-9474-15d22fb4f54f.png",
       title: "Water Feature Accent Lighting",
       description: "Illuminated fountain columns create a stunning focal point in the garden."
+    },
+    {
+      id: 4,
+      image: "/lovable-uploads/eba54bf1-86e9-4f0d-91d9-7e516e192c40.png",
+      title: "Backyard Landscape Lighting",
+      description: "Elegant palm lighting with wall accent illumination creates depth and dimension in this backyard oasis."
     }
   ];
 
@@ -92,7 +98,7 @@ const OutdoorLightingGallery = () => {
         {/* Gallery Grid */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
               {galleryItems.map((item, index) => (
                 <div 
                   key={item.id} 
