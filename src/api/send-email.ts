@@ -35,30 +35,31 @@ export async function sendContactEmail(data: {
       };
     } else {
       // In production, actually send the email
-      const { data: emailData, error } = await resend.emails.send({
-        from: 'onboarding@resend.dev', // Use a verified domain in production
-        to: 'your-email@example.com', // Replace with the actual recipient email
-        subject: `New contact from ${data.name} - ${data.service}`,
-        html: `
-          <h2>New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${data.name}</p>
-          <p><strong>Email:</strong> ${data.from}</p>
-          <p><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
-          <p><strong>Service Interested In:</strong> ${data.service || 'Not specified'}</p>
-          <p><strong>Message:</strong></p>
-          <p>${data.message}</p>
-        `,
-      });
+      try {
+        const emailResponse = await resend.emails.send({
+          from: 'onboarding@resend.dev', // Use a verified domain in production
+          to: 'your-email@example.com', // Replace with the actual recipient email
+          subject: `New contact from ${data.name} - ${data.service}`,
+          html: `
+            <h2>New Contact Form Submission</h2>
+            <p><strong>Name:</strong> ${data.name}</p>
+            <p><strong>Email:</strong> ${data.from}</p>
+            <p><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
+            <p><strong>Service Interested In:</strong> ${data.service || 'Not specified'}</p>
+            <p><strong>Message:</strong></p>
+            <p>${data.message}</p>
+          `,
+        });
 
-      if (error) {
-        throw new Error(error.message);
+        console.log('Email sent successfully:', emailResponse);
+        return { 
+          success: true,
+          message: "Your message has been sent successfully"
+        };
+      } catch (emailError) {
+        console.error('Resend API error:', emailError);
+        throw emailError;
       }
-
-      console.log('Email sent successfully:', emailData);
-      return { 
-        success: true,
-        message: "Your message has been sent successfully"
-      };
     }
   } catch (error) {
     console.error('Error sending email:', error);
