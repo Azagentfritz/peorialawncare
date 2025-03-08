@@ -98,7 +98,7 @@ const OutdoorLightingGallery = () => {
         {/* Gallery Grid */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
               {galleryItems.map((item, index) => (
                 <div 
                   key={item.id} 
@@ -106,11 +106,11 @@ const OutdoorLightingGallery = () => {
                   style={{ animationDelay: `${index * 100}ms` }}
                   onClick={() => openLightbox(index)}
                 >
-                  <div className="aspect-w-4 aspect-h-3 h-64 overflow-hidden">
+                  <div className="aspect-w-16 aspect-h-12 relative">
                     <img 
                       src={item.image} 
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-700 
+                      className="w-full h-80 object-cover transition-transform duration-700 
                       group-hover:scale-110"
                       loading="lazy"
                     />
@@ -173,11 +173,11 @@ const OutdoorLightingGallery = () => {
             <ArrowLeft size={24} />
           </button>
           
-          <div className="relative max-w-5xl max-h-[80vh] overflow-hidden">
+          <div className="w-full h-full max-w-6xl max-h-[80vh] p-4 flex items-center justify-center">
             <img 
               src={selectedImage} 
               alt="Enlarged view" 
-              className="max-w-full max-h-[80vh] object-contain"
+              className="max-w-full max-h-full object-contain"
             />
           </div>
           
