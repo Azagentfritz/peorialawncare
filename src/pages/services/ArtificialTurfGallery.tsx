@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, X, Flower2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
@@ -130,13 +129,6 @@ const ArtificialTurfGallery = () => {
                       alt={item.title}
                       className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-end">
-                      <div className="p-4 w-full bg-gradient-to-t from-black/70 to-transparent">
-                        <h3 className="text-white font-semibold transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                          {item.title}
-                        </h3>
-                      </div>
-                    </div>
                   </div>
                 </div>
               ))}
