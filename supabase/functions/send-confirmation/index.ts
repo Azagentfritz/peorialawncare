@@ -28,6 +28,11 @@ const handler = async (req: Request): Promise<Response> => {
     const { name, email, service, message, phone }: ContactEmailRequest = await req.json();
 
     console.log(`Sending confirmation email to ${email} for ${name}`);
+    
+    if (!email || !name) {
+      console.error("Missing required fields:", { email, name });
+      throw new Error("Missing required fields: email and name are required");
+    }
 
     // Format the service name for display
     let formattedService = '';
@@ -38,6 +43,7 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     // Send confirmation email to the customer
+    console.log("Attempting to send customer confirmation email...");
     const customerEmailResponse = await resend.emails.send({
       from: "Peoria Lawn Care <onboarding@resend.dev>",
       to: [email],
@@ -64,6 +70,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send notification email to the business owner
     if (message) {
+      console.log("Attempting to send notification email to business owner...");
       const notificationEmailResponse = await resend.emails.send({
         from: "Peoria Lawn Care <onboarding@resend.dev>",
         to: ["newkfritz@gmail.com"],

@@ -31,6 +31,8 @@ export async function sendContactEmail(data: {
 
     // Send confirmation email using the Supabase Edge Function
     try {
+      console.log('Sending confirmation email to:', data.from);
+      
       const emailResponse = await supabase.functions.invoke('send-confirmation', {
         body: {
           name: data.name,
@@ -48,15 +50,23 @@ export async function sendContactEmail(data: {
       } else {
         // Just log the error but don't fail the whole request
         console.error('Error sending confirmation email:', emailResponse.error);
+        return { 
+          success: true, 
+          message: "Your message has been received, but we couldn't send a confirmation email. We'll still be in touch soon!" 
+        };
       }
     } catch (emailError) {
       // Just log the error but don't fail the whole request
       console.error('Exception sending confirmation email:', emailError);
+      return { 
+        success: true, 
+        message: "Your message has been received, but we couldn't send a confirmation email. We'll still be in touch soon!" 
+      };
     }
     
     return { 
       success: true, 
-      message: "Your message has been received. We'll be in touch soon!" 
+      message: "Your message has been received. We'll be in touch soon! Please check your email for a confirmation." 
     };
   } catch (error) {
     console.error('Error in sendContactEmail:', error);
