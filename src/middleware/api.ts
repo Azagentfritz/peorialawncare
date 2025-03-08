@@ -13,14 +13,15 @@ export async function handleApiRequest(request: Request) {
       
       // Return the API response
       return new Response(JSON.stringify(result), {
-        status: 200,
+        status: result.success === false ? 400 : 200,
         headers: {
           'Content-Type': 'application/json'
         }
       });
     } catch (error) {
       console.error('API error:', error);
-      return new Response(JSON.stringify({ error: 'Internal server error' }), {
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+      return new Response(JSON.stringify({ success: false, error: errorMessage }), {
         status: 500,
         headers: {
           'Content-Type': 'application/json'

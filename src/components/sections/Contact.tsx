@@ -24,6 +24,8 @@ const Contact = () => {
     setIsSubmitSuccess(false);
 
     try {
+      console.log("Submitting form data:", formData);
+      
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
@@ -38,8 +40,11 @@ const Contact = () => {
         }),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to send email");
+      const result = await response.json();
+      console.log("Form submission result:", result);
+
+      if (!response.ok || result.success === false) {
+        throw new Error(result.error || "Failed to send email");
       }
 
       // Show success notification
@@ -64,7 +69,7 @@ const Contact = () => {
       console.error("Error sending email:", error);
       toast({
         title: "Error Sending Message",
-        description: "There was a problem sending your message. Please try again.",
+        description: error instanceof Error ? error.message : "There was a problem sending your message. Please try again.",
         variant: "destructive",
       });
     } finally {

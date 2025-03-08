@@ -13,7 +13,7 @@ export async function sendContactEmail(data: {
 }) {
   try {
     // Email to owner/business (primary recipient)
-    await resend.emails.send({
+    const ownerEmailResult = await resend.emails.send({
       from: 'contact@peoria-lawncare.com',
       to: ['azagentfritz@gmail.com', 'newkfritz@gmail.com'],
       subject: `New Contact Form Submission from ${data.name}`,
@@ -28,8 +28,10 @@ export async function sendContactEmail(data: {
       `
     });
 
+    console.log('Owner email sent:', ownerEmailResult);
+
     // Confirmation email to customer
-    await resend.emails.send({
+    const customerEmailResult = await resend.emails.send({
       from: 'contact@peoria-lawncare.com',
       to: data.from,
       subject: 'Thank You for Contacting Peoria Lawn Care',
@@ -48,9 +50,15 @@ export async function sendContactEmail(data: {
       `
     });
 
+    console.log('Customer email sent:', customerEmailResult);
+
     return { success: true };
   } catch (error) {
     console.error('Error sending email:', error);
-    throw error;
+    // Return a more structured error response
+    return { 
+      success: false, 
+      error: error instanceof Error ? error.message : 'Unknown error occurred'
+    };
   }
 }
