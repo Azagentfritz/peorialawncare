@@ -77,7 +77,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send confirmation email to the customer
     console.log("Attempting to send customer confirmation email...");
     const customerEmailResponse = await resend.emails.send({
-      from: "Peoria Lawn Care <onboarding@resend.dev>",
+      from: "Peoria Lawn Care <info@peorialawncare.com>", // Use your verified domain here
       to: [email],
       subject: "Thank You for Contacting Peoria Lawn Care",
       html: customerEmailTemplate,
@@ -91,7 +91,7 @@ const handler = async (req: Request): Promise<Response> => {
       
       // Send to both business owner email and the additional recipient
       const notificationEmailResponse = await resend.emails.send({
-        from: "Peoria Lawn Care <onboarding@resend.dev>",
+        from: "Peoria Lawn Care <info@peorialawncare.com>", // Use your verified domain here
         to: ["newkfritz@gmail.com", "collabmastermillion@gmail.com"],
         subject: `New Contact Form Submission from ${name}`,
         html: notificationEmailTemplate,
@@ -108,7 +108,9 @@ const handler = async (req: Request): Promise<Response> => {
       },
     });
   } catch (error: any) {
-    console.error("Error in send-confirmation function:", error);
+    console.error("Error in send-confirmation function:", error.message);
+    console.error("Error details:", error);
+    
     return new Response(
       JSON.stringify({ success: false, error: error.message }),
       {
