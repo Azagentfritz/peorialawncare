@@ -4,8 +4,7 @@ import { ApiResponse } from './index';
 
 // In a real production environment, this would use environment variables
 // Since we're in a frontend-only app, we'll use a client-side key
-// NOTE: This is not ideal for production - a proper backend service would be better
-const resend = new Resend('re_yourResendApiKeyHere');
+const resend = new Resend('re_7y2Me4us_jQUMqPoaCFsUgXwqtHYRTZKA');
 
 export async function sendContactEmail(data: {
   from: string;
