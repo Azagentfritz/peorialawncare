@@ -45,13 +45,37 @@ const ContactForm = () => {
     try {
       console.log("Submitting form data:", formData);
       
-      toast({
-        title: "Email Service Disabled",
-        description: "The email service has been removed and needs to be reinstalled.",
-        variant: "destructive",
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: formData.email,
+          name: formData.name,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message
+        }),
       });
       
-      setIsSubmitSuccess(false);
+      const result = await response.json();
+      
+      if (result.success) {
+        toast({
+          title: "Success!",
+          description: result.message,
+          variant: "default",
+        });
+        setIsSubmitSuccess(true);
+      } else {
+        toast({
+          title: "Error",
+          description: result.error || "Failed to send your message. Please try again.",
+          variant: "destructive",
+        });
+        setIsSubmitSuccess(false);
+      }
       
     } catch (error) {
       console.error("Error:", error);
