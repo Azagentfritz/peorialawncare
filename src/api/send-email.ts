@@ -58,8 +58,8 @@ export async function sendContactEmail(data: {
       reply_to: data.from
     });
 
-    // Check if there was an error
-    if (result.error) {
+    // Check if there was an error - using the ErrorResponse check
+    if ('error' in result) {
       console.error('Resend API error:', result.error);
       return {
         success: false,
