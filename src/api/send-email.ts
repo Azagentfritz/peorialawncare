@@ -1,8 +1,7 @@
-
 import { Resend } from 'resend';
 
 // Initialize Resend with your API key
-const resend = new Resend('re_');  // You'll need to provide your actual Resend API key
+const resend = new Resend('re_');  // Replace 're_' with your actual Resend API key
 
 export async function sendContactEmail(data: {
   from: string;
