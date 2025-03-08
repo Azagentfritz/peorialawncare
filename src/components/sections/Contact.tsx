@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Loader2 } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -12,6 +11,7 @@ const Contact = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -21,6 +21,7 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setIsSubmitSuccess(false);
 
     try {
       const response = await fetch("/api/send-email", {
@@ -41,6 +42,16 @@ const Contact = () => {
         throw new Error("Failed to send email");
       }
 
+      // Show success notification
+      toast({
+        title: "Message Sent Successfully",
+        description: "Thank you! We'll get back to you shortly.",
+        variant: "default",
+      });
+      
+      // Set success state
+      setIsSubmitSuccess(true);
+      
       // Reset form
       setFormData({
         name: "",
@@ -48,13 +59,6 @@ const Contact = () => {
         phone: "",
         service: "",
         message: ""
-      });
-
-      // Show success notification
-      toast({
-        title: "Message Sent Successfully",
-        description: "Thank you! We'll get back to you shortly.",
-        variant: "default",
       });
     } catch (error) {
       console.error("Error sending email:", error);
@@ -174,104 +178,124 @@ const Contact = () => {
           {/* Right column - Contact form */}
           <div className="lg:col-span-3 animate-fade-in-left">
             <div className="bg-white rounded-lg p-6 lg:p-8 shadow-md border border-gray-100">
-              <h3 className="text-2xl font-semibold mb-6">Send Us a Message</h3>
-              
-              <form onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label htmlFor="name" className="block text-gray-700 mb-2">Your Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lawn-500 focus:border-transparent"
-                      placeholder="John Doe"
-                      required
-                    />
+              {isSubmitSuccess ? (
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle size={32} className="text-green-600" />
                   </div>
-                  <div>
-                    <label htmlFor="email" className="block text-gray-700 mb-2">Email Address</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lawn-500 focus:border-transparent"
-                      placeholder="example@email.com"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-gray-700 mb-2">Phone Number</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lawn-500 focus:border-transparent"
-                      placeholder="(123) 456-7890"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="service" className="block text-gray-700 mb-2">Service Interested In</label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lawn-500 focus:border-transparent"
-                    >
-                      <option value="">Select a service</option>
-                      <option value="lawn-maintenance">Lawn Maintenance</option>
-                      <option value="landscape-design">Landscape Design</option>
-                      <option value="tree-care">Tree & Shrub Care</option>
-                      <option value="irrigation">Irrigation Systems</option>
-                      <option value="artificial-turf">Artificial Turf</option>
-                      <option value="outdoor-features">Outdoor Features</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
+                  <h3 className="text-2xl font-semibold mb-2">Message Sent!</h3>
+                  <p className="text-gray-600 mb-6">Thank you for reaching out to us. We'll get back to you as soon as possible.</p>
+                  <button 
+                    onClick={() => setIsSubmitSuccess(false)}
+                    className="bg-lawn-500 hover:bg-lawn-600 text-white px-6 py-3 rounded-md transition-all duration-300"
+                  >
+                    Send Another Message
+                  </button>
                 </div>
-                
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-gray-700 mb-2">Your Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={5}
-                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lawn-500 focus:border-transparent"
-                    placeholder="Tell us about your project or questions..."
-                    required
-                  ></textarea>
-                </div>
+              ) : (
+                <>
+                  <h3 className="text-2xl font-semibold mb-6">Send Us a Message</h3>
+                  
+                  <form onSubmit={handleSubmit}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                      <div>
+                        <label htmlFor="name" className="block text-gray-700 mb-2">Your Name</label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lawn-500 focus:border-transparent"
+                          placeholder="John Doe"
+                          required
+                          disabled={isSubmitting}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="block text-gray-700 mb-2">Email Address</label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lawn-500 focus:border-transparent"
+                          placeholder="example@email.com"
+                          required
+                          disabled={isSubmitting}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="phone" className="block text-gray-700 mb-2">Phone Number</label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lawn-500 focus:border-transparent"
+                          placeholder="(123) 456-7890"
+                          disabled={isSubmitting}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="service" className="block text-gray-700 mb-2">Service Interested In</label>
+                        <select
+                          id="service"
+                          name="service"
+                          value={formData.service}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lawn-500 focus:border-transparent"
+                          disabled={isSubmitting}
+                        >
+                          <option value="">Select a service</option>
+                          <option value="lawn-maintenance">Lawn Maintenance</option>
+                          <option value="landscape-design">Landscape Design</option>
+                          <option value="tree-care">Tree & Shrub Care</option>
+                          <option value="irrigation">Irrigation Systems</option>
+                          <option value="artificial-turf">Artificial Turf</option>
+                          <option value="outdoor-features">Outdoor Features</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div className="mb-6">
+                      <label htmlFor="message" className="block text-gray-700 mb-2">Your Message</label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows={5}
+                        className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lawn-500 focus:border-transparent"
+                        placeholder="Tell us about your project or questions..."
+                        required
+                        disabled={isSubmitting}
+                      ></textarea>
+                    </div>
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`bg-lawn-500 hover:bg-lawn-600 text-white px-6 py-3 rounded-md transition-all duration-300 flex items-center justify-center gap-2 w-full md:w-auto ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send size={18} />
-                      <span>Send Message</span>
-                    </>
-                  )}
-                </button>
-              </form>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className={`bg-lawn-500 hover:bg-lawn-600 text-white px-6 py-3 rounded-md transition-all duration-300 flex items-center justify-center gap-2 w-full md:w-auto ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 size={18} className="animate-spin" />
+                          <span>Sending...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send size={18} />
+                          <span>Send Message</span>
+                        </>
+                      )}
+                    </button>
+                  </form>
+                </>
+              )}
             </div>
           </div>
         </div>
