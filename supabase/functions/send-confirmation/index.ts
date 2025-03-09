@@ -48,7 +48,7 @@ const handler = async (req: Request): Promise<Response> => {
         <h1 style="color: #4CAF50; margin-bottom: 20px;">Thank You for Contacting Us</h1>
         <p>Dear ${name},</p>
         <p>Thank you for reaching out to Peoria Lawn Care. We have received your inquiry${service ? ` about our ${formattedService} service` : ''}.</p>
-        <p>Our team will review your message and get back to you as soon as possible, typically within 1-2 business days.</p>
+        <p>Our team will review your message and get back to you as soon as possible, typically within 24 hours.</p>
         <p>In the meantime, feel free to explore our website for more information about our services.</p>
         <div style="margin: 30px 0; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #4CAF50;">
           <p style="margin: 0;"><strong>Peoria Lawn Care</strong></p>
