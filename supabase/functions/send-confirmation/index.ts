@@ -92,7 +92,7 @@ const handler = async (req: Request): Promise<Response> => {
       // Send to both business owner email and the additional recipient
       const notificationEmailResponse = await resend.emails.send({
         from: "Peoria Lawn Care <info@peoria-lawncare.com>", // Using the correct verified domain
-        to: ["newkfritz@gmail.com", "collabmastermillion@gmail.com"],
+        to: ["newkfritz@gmail.com", "azagentfritz@gmail.com"],
         subject: `New Contact Form Submission from ${name}`,
         html: notificationEmailTemplate,
       });
