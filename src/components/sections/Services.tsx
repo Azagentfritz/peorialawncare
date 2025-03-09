@@ -1,5 +1,5 @@
 
-import { Droplets, Flower2, TreePine, PenTool, SunMedium, Lightbulb, Image } from "lucide-react";
+import { Flower2, Lightbulb, Image } from "lucide-react";
 import ServiceCard from "../ui/ServiceCard";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
@@ -7,34 +7,16 @@ import { Link } from "react-router-dom";
 const Services = () => {
   const services = [
     {
-      icon: <PenTool size={28} />,
-      title: "Landscape Design",
-      description: "Custom landscape design services that transform your outdoor space into a beautiful, functional extension of your home.",
-      path: "/services/landscape-design"
-    },
-    {
       icon: <Lightbulb size={28} />,
       title: "Outdoor Lighting",
       description: "Professional lighting design and installation to enhance your landscape's beauty after dark while improving safety and security.",
       path: "/services/outdoor-lighting"
     },
     {
-      icon: <Droplets size={28} />,
-      title: "Irrigation Systems",
-      description: "Installation and maintenance of efficient irrigation systems to ensure optimal watering for your landscape.",
-      path: "/services/irrigation-systems"
-    },
-    {
       icon: <Flower2 size={28} />,
       title: "Artificial Turf",
       description: "High-quality artificial turf installation that provides a lush, green lawn without the maintenance or water requirements.",
       path: "/services/artificial-turf"
-    },
-    {
-      icon: <SunMedium size={28} />,
-      title: "Outdoor Features",
-      description: "Custom fire pits, outdoor kitchens, and other features that enhance the functionality and enjoyment of your outdoor space.",
-      path: "/services/outdoor-features"
     },
   ];
 
@@ -66,44 +48,8 @@ const Services = () => {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          {/* Desktop layout: First row with 3 items */}
-          <div className="hidden lg:grid lg:grid-cols-3 gap-8 mb-8">
-            {services.slice(0, 3).map((service, index) => (
-              <div 
-                key={index} 
-                className="animate-fade-in" 
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <ServiceCard
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.description}
-                  path={service.path}
-                />
-              </div>
-            ))}
-          </div>
-          
-          {/* Desktop layout: Second row with 2 items centered */}
-          <div className="hidden lg:grid lg:grid-cols-2 gap-8 lg:px-[12.5%]">
-            {services.slice(3, 5).map((service, index) => (
-              <div 
-                key={index + 3} 
-                className="animate-fade-in" 
-                style={{ animationDelay: `${(index + 3) * 100}ms` }}
-              >
-                <ServiceCard
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.description}
-                  path={service.path}
-                />
-              </div>
-            ))}
-          </div>
-          
-          {/* Mobile and tablet layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-8">
+          {/* Service cards layout - centered for both mobile and desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {services.map((service, index) => (
               <div 
                 key={index} 
