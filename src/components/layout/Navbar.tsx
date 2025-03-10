@@ -26,6 +26,44 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Handle smooth scrolling to sections
+  const scrollToSection = (sectionId: string) => {
+    // Close mobile menu if open
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      // This will be handled by the location change effect below
+      return;
+    }
+
+    // Handle smooth scrolling on the home page
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Add a small delay to ensure DOM is ready
+      setTimeout(() => {
+        const navbarHeight = 80; // Approximate navbar height
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }, 100);
+    }
+  };
+
+  // Handle scrolling when navigating from a different page to a section on the home page
+  useEffect(() => {
+    if (location.pathname === '/' && location.hash) {
+      const sectionId = location.hash.substring(1); // Remove the # character
+      scrollToSection(sectionId);
+    }
+  }, [location]);
+
   const navLinks = [
     { name: "Home", url: "/", hash: "" },
     { name: "About", url: "/#about", hash: "about" },
@@ -51,6 +89,17 @@ const Navbar = () => {
     }
     
     return false;
+  };
+
+  // Handle link clicks with custom scroll behavior
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, link: { url: string, hash: string }) => {
+    if (link.hash && location.pathname === '/') {
+      e.preventDefault();
+      scrollToSection(link.hash);
+      
+      // Update the URL hash without page reload
+      window.history.pushState(null, '', `/#${link.hash}`);
+    }
   };
 
   return (
@@ -84,6 +133,7 @@ const Navbar = () => {
                     className={`text-sm font-medium transition-all duration-300 hover:text-lawn-500 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-lawn-500 after:transition-all after:duration-300 hover:after:w-full ${
                       (isScrolled || isServicePage) ? "text-gray-800" : "text-white"
                     } ${isActive(link) ? "text-lawn-500 after:w-full" : ""}`}
+                    onClick={(e) => handleLinkClick(e, link)}
                   >
                     {link.name}
                   </Link>
@@ -139,7 +189,10 @@ const Navbar = () => {
                   className={`block py-2 text-sm font-medium hover:text-lawn-500 ${
                     isActive(link) ? "text-lawn-500" : "text-gray-800"
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    handleLinkClick(e, link);
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
                   {link.name}
                 </Link>
