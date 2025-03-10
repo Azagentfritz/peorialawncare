@@ -1,3 +1,4 @@
+
 import { CheckCircle, Phone } from "lucide-react";
 
 const About = () => {
@@ -46,7 +47,7 @@ const About = () => {
               With our team of experienced professionals, we bring creativity, expertise, and attention to detail to every project.
             </p>
             <p className="text-gray-600 mb-8 leading-relaxed">
-              Whether you're looking for a complete landscape redesign, regular maintenance, or specialized services 
+              Whether you're looking for a complete landscape redesign, specialized services 
               like artificial turf installation or fire pit construction, we deliver exceptional results that exceed expectations.
             </p>
 
