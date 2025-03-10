@@ -1,3 +1,4 @@
+
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Sprout } from "lucide-react";
 
 const Footer = () => {
@@ -94,8 +95,8 @@ const Footer = () => {
                 <Mail size={18} className="text-lawn-500 mt-0.5" />
                 <div>
                   <p className="text-sm text-gray-300">Email</p>
-                  <a href="mailto:contact@peoria-lawncare.com" className="hover:text-lawn-400 transition-colors duration-300">
-                    contact@peoria-lawncare.com
+                  <a href="mailto:peorialawncare@icloud.com" className="hover:text-lawn-400 transition-colors duration-300">
+                    Click to Email
                   </a>
                 </div>
               </li>
