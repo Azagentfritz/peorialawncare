@@ -1,4 +1,3 @@
-
 import { Flower2, Lightbulb, Image, Sprout, Droplets } from "lucide-react";
 import ServiceCard from "../ui/ServiceCard";
 import { cn } from "@/lib/utils";
@@ -22,13 +21,13 @@ const Services = () => {
       icon: <Sprout size={28} />,
       title: "Landscape Design",
       description: "Custom landscape design services to transform your outdoor space into a beautiful and functional extension of your home.",
-      path: ""  // Removed path to make unclickable
+      path: ""  // Keep empty to make unclickable but with animations
     },
     {
       icon: <Droplets size={28} />,
       title: "Irrigation Systems",
       description: "Efficient irrigation system installation and repair to keep your landscape healthy while conserving water and reducing costs.",
-      path: ""  // Removed path to make unclickable
+      path: ""  // Keep empty to make unclickable but with animations
     },
   ];
 
@@ -59,7 +58,6 @@ const Services = () => {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          {/* Service cards layout - centered for both mobile and desktop */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {services.map((service, index) => (
               <div 
@@ -78,7 +76,6 @@ const Services = () => {
           </div>
         </div>
 
-        {/* Gallery Links */}
         <div className="max-w-2xl mx-auto mt-12 mb-8 bg-white rounded-lg shadow-md p-6">
           <div className="text-center mb-6">
             <div className="flex items-center justify-center mb-4">
