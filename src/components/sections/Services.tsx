@@ -21,7 +21,7 @@ const Services = () => {
       icon: <Sprout size={28} />,
       title: "Landscape Design",
       description: "Custom landscape design services to transform your outdoor space into a beautiful and functional extension of your home.",
-      path: ""  // Keep empty to make unclickable but with animations
+      path: "/services/landscape-design"
     },
     {
       icon: <Droplets size={28} />,
@@ -40,6 +40,10 @@ const Services = () => {
     {
       title: "Outdoor Lighting",
       path: "/services/outdoor-lighting-gallery"
+    },
+    {
+      title: "Landscape Design",
+      path: "/services/landscape-design-gallery"
     }
   ];
 
