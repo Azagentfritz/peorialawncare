@@ -27,10 +27,10 @@ const ContactInfo = () => {
           <div>
             <p className="text-gray-500 text-sm mb-1">Email Address</p>
             <a 
-              href="mailto:contact@peoria-lawncare.com" 
+              href="mailto:peorialawncare@icloud.com" 
               className="text-gray-800 font-medium hover:text-lawn-600 transition-colors"
             >
-              contact@peoria-lawncare.com
+              Click to Email
             </a>
           </div>
         </li>
