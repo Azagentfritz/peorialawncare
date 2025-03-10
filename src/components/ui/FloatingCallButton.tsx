@@ -16,12 +16,12 @@ const FloatingCallButton = ({ phoneNumber, className }: FloatingCallButtonProps)
     <button
       onClick={handleCall}
       className={cn(
-        "fixed z-50 p-3 rounded-full bg-lawn-500 text-white shadow-lg hover:bg-lawn-600 transition-all duration-300 flex items-center justify-center",
+        "fixed z-50 p-4 rounded-full bg-lawn-500 text-white shadow-lg hover:bg-lawn-600 transition-all duration-300 flex items-center justify-center",
         className
       )}
       aria-label={`Call ${phoneNumber}`}
     >
-      <Phone size={20} className="animate-bounce-subtle" />
+      <Phone size={24} className="animate-bounce-subtle" />
     </button>
   );
 };
