@@ -1,5 +1,5 @@
 
-import { Flower2, Lightbulb, Image } from "lucide-react";
+import { Flower2, Lightbulb, Image, Sprout, Droplets } from "lucide-react";
 import ServiceCard from "../ui/ServiceCard";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
@@ -17,6 +17,18 @@ const Services = () => {
       title: "Artificial Turf",
       description: "High-quality artificial turf installation that provides a lush, green lawn without the maintenance or water requirements.",
       path: "/services/artificial-turf"
+    },
+    {
+      icon: <Sprout size={28} />,
+      title: "Landscape Design",
+      description: "Custom landscape design services to transform your outdoor space into a beautiful and functional extension of your home.",
+      path: "/services/landscape-design"
+    },
+    {
+      icon: <Droplets size={28} />,
+      title: "Irrigation Systems",
+      description: "Efficient irrigation system installation and repair to keep your landscape healthy while conserving water and reducing costs.",
+      path: "/services/irrigation-systems"
     },
   ];
 
@@ -42,8 +54,7 @@ const Services = () => {
           </h2>
           <div className="w-20 h-1 bg-lawn-500 mx-auto mb-6"></div>
           <p className="text-gray-600">
-            We provide a comprehensive range of landscaping services to meet all your outdoor needs, 
-            from regular maintenance to complete landscape transformations.
+            We provide a comprehensive range of landscaping services to meet all your outdoor needs.
           </p>
         </div>
 
