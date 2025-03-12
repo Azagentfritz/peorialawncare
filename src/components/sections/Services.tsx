@@ -1,3 +1,4 @@
+
 import { Flower2, Lightbulb, Image, Sprout, Droplets } from "lucide-react";
 import ServiceCard from "../ui/ServiceCard";
 import { cn } from "@/lib/utils";
@@ -27,7 +28,7 @@ const Services = () => {
       icon: <Droplets size={28} />,
       title: "Irrigation Systems",
       description: "Efficient irrigation system installation and repair to keep your landscape healthy while conserving water and reducing costs.",
-      path: ""  // Keep empty to make unclickable but with animations
+      path: "/services/irrigation-systems"  // Added path to make this card clickable with animations
     },
   ];
 

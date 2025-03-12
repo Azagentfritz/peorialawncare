@@ -48,6 +48,49 @@ const LandscapeDesignGallery = () => {
       image: "/lovable-uploads/bbe7a83e-22c8-45f6-a80d-b97a926ac3a5.png",
       title: "Backyard Transformation",
       description: "Complete backyard redesign with artificial turf and paved sitting area."
+    },
+    // Adding the new uploaded images
+    {
+      id: 7,
+      image: "/lovable-uploads/d8770e4b-3847-4cce-b4e9-60963716f23c.png",
+      title: "Modern Backyard Turf",
+      description: "Clean, modern backyard design with artificial turf and stone paver accents along the perimeter."
+    },
+    {
+      id: 8,
+      image: "/lovable-uploads/95f26a86-0b00-4f89-a14e-2e16513bc1ca.png",
+      title: "Side Yard Turf Pathway",
+      description: "Neat side yard with artificial turf and a stone paver pathway leading to the backyard."
+    },
+    {
+      id: 9,
+      image: "/lovable-uploads/0005a311-5cc5-4939-8a5e-399bb60609e9.png",
+      title: "Spacious Backyard Lawn",
+      description: "Open backyard space with premium artificial turf creating a clean, low-maintenance lawn area."
+    },
+    {
+      id: 10,
+      image: "/lovable-uploads/aee109ca-6a88-4040-8e8a-20574e695d0b.png",
+      title: "Xeriscaped Side Yard",
+      description: "Water-efficient side yard combining artificial turf with decorative gravel and young shade trees."
+    },
+    {
+      id: 11,
+      image: "/lovable-uploads/856ac044-3289-4c17-ba43-a21db33a271f.png",
+      title: "Desert Landscape Design",
+      description: "Low-water landscape featuring artificial turf bordered by decorative gravel and desert-friendly plants."
+    },
+    {
+      id: 12,
+      image: "/lovable-uploads/5d10cd80-6954-4945-9750-7784a479262d.png",
+      title: "Modern Desert Yard",
+      description: "Contemporary desert landscape with artificial turf section, stone pavers, and drought-tolerant perimeter plantings."
+    },
+    {
+      id: 13,
+      image: "/lovable-uploads/6b8f96cb-fbda-430d-b04c-46e192c45d80.png",
+      title: "Premium Turf Installation",
+      description: "Pristine artificial turf installation with clean borders and stone paver transition areas."
     }
   ];
 

@@ -13,6 +13,7 @@ import ArtificialTurfGallery from "./pages/services/ArtificialTurfGallery";
 import OutdoorLightingGallery from "./pages/services/OutdoorLightingGallery";
 import LandscapeDesign from "./pages/services/LandscapeDesign";
 import LandscapeDesignGallery from "./pages/services/LandscapeDesignGallery";
+import IrrigationSystems from "./pages/services/IrrigationSystems";
 import ScrollToTop from "./components/utility/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/services/outdoor-lighting" element={<OutdoorLighting />} />
           <Route path="/services/artificial-turf" element={<ArtificialTurf />} />
           <Route path="/services/landscape-design" element={<LandscapeDesign />} />
+          <Route path="/services/irrigation-systems" element={<IrrigationSystems />} />
           
           {/* Gallery Pages */}
           <Route path="/services/artificial-turf-gallery" element={<ArtificialTurfGallery />} />
