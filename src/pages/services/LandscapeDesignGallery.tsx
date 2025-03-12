@@ -91,6 +91,43 @@ const LandscapeDesignGallery = () => {
       image: "/lovable-uploads/6b8f96cb-fbda-430d-b04c-46e192c45d80.png",
       title: "Premium Turf Installation",
       description: "Pristine artificial turf installation with clean borders and stone paver transition areas."
+    },
+    // Adding the newly uploaded images
+    {
+      id: 14,
+      image: "/lovable-uploads/1e2089dc-b4a6-412a-9082-4ff2ecf0c602.png",
+      title: "Dog-Friendly Yard Design",
+      description: "Pet-friendly artificial turf installation with stone pavers and pool area, perfect for furry companions."
+    },
+    {
+      id: 15,
+      image: "/lovable-uploads/26570340-72e7-4794-9422-0c2f325c6495.png",
+      title: "Fountain Feature with Turf",
+      description: "Elegant water fountain surrounded by artificial turf in a checkerboard pattern with white stone pavers."
+    },
+    {
+      id: 16,
+      image: "/lovable-uploads/66362421-3edf-45f4-9afa-681bf8479d17.png",
+      title: "Paver Patio Circle Design",
+      description: "Custom circular paver patio with decorative rock border and desert-friendly landscaping."
+    },
+    {
+      id: 17,
+      image: "/lovable-uploads/ec46c856-7f39-465a-88a3-0aa4dd851146.png",
+      title: "Modern Paver Circle",
+      description: "Contemporary circular stone paver design with surrounding desert landscaping features."
+    },
+    {
+      id: 18,
+      image: "/lovable-uploads/f85805fb-dead-4acd-b0e1-0f85bd3f079d.png",
+      title: "Desert Rock Pathway",
+      description: "Elegant stone paver pathway through desert rock landscaping with native plants."
+    },
+    {
+      id: 19,
+      image: "/lovable-uploads/0c018f9d-13df-4b51-aaa2-178ca225ddf3.png",
+      title: "Decorative Stone Walkway",
+      description: "Patterned stone walkway with rock borders and minimalist desert plants for low maintenance."
     }
   ];
 
