@@ -36,6 +36,18 @@ const OutdoorLightingGallery = () => {
       image: "/lovable-uploads/eba54bf1-86e9-4f0d-91d9-7e516e192c40.png",
       title: "Backyard Landscape Lighting",
       description: "Elegant palm lighting with wall accent illumination creates depth and dimension in this backyard oasis."
+    },
+    {
+      id: 5,
+      image: "/lovable-uploads/ed2d28e3-d9a6-48d4-83f5-6c2387b89597.png",
+      title: "Poolside Fire Feature Lighting",
+      description: "Nighttime ambiance with illuminated landscaping and a blue glass fire pit adjacent to the pool area."
+    },
+    {
+      id: 6,
+      image: "/lovable-uploads/f0d4bf20-0fe3-4ccf-9a35-ac9f869f51eb.png",
+      title: "Modern Patio Accent Lighting",
+      description: "Contemporary patio with architectural lighting and grass grid pavers creates an elegant outdoor living space."
     }
   ];
 
