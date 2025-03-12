@@ -1,10 +1,10 @@
-
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { ArrowLeft, ArrowRight, X, Phone } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingCallButton from "@/components/ui/FloatingCallButton";
+import Projects from "@/components/sections/Projects";
 
 const Gallery = () => {
   const { toast } = useToast();
@@ -184,8 +184,48 @@ const Gallery = () => {
             </div>
           </div>
         </section>
+
+        {/* Projects Section */}
+        <Projects />
         
-        {/* Testimonial Section has been removed */}
+        {/* Lightbox */}
+        {selectedImage && (
+          <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center animate-fade-in">
+            <button 
+              onClick={closeLightbox}
+              className="absolute top-6 right-6 text-white hover:text-lawn-300 transition-colors"
+              aria-label="Close lightbox"
+            >
+              <X size={32} />
+            </button>
+            
+            <button 
+              onClick={() => navigateLightbox('prev')}
+              className="absolute left-6 top-1/2 -translate-y-1/2 text-white hover:text-lawn-300 
+                transition-colors bg-black/30 p-2 rounded-full"
+              aria-label="Previous image"
+            >
+              <ArrowLeft size={24} />
+            </button>
+            
+            <div className="relative max-w-5xl max-h-[80vh] overflow-hidden">
+              <img 
+                src={selectedImage} 
+                alt="Enlarged view" 
+                className="max-w-full max-h-[80vh] object-contain"
+              />
+            </div>
+            
+            <button 
+              onClick={() => navigateLightbox('next')}
+              className="absolute right-6 top-1/2 -translate-y-1/2 text-white hover:text-lawn-300 
+                transition-colors bg-black/30 p-2 rounded-full"
+              aria-label="Next image"
+            >
+              <ArrowRight size={24} />
+            </button>
+          </div>
+        )}
       </main>
       
       <Footer />
@@ -193,45 +233,6 @@ const Gallery = () => {
         phoneNumber="623-845-2626"
         className="bottom-6 right-6"
       />
-
-      {/* Lightbox */}
-      {selectedImage && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center animate-fade-in">
-          <button 
-            onClick={closeLightbox}
-            className="absolute top-6 right-6 text-white hover:text-lawn-300 transition-colors"
-            aria-label="Close lightbox"
-          >
-            <X size={32} />
-          </button>
-          
-          <button 
-            onClick={() => navigateLightbox('prev')}
-            className="absolute left-6 top-1/2 -translate-y-1/2 text-white hover:text-lawn-300 
-              transition-colors bg-black/30 p-2 rounded-full"
-            aria-label="Previous image"
-          >
-            <ArrowLeft size={24} />
-          </button>
-          
-          <div className="relative max-w-5xl max-h-[80vh] overflow-hidden">
-            <img 
-              src={selectedImage} 
-              alt="Enlarged view" 
-              className="max-w-full max-h-[80vh] object-contain"
-            />
-          </div>
-          
-          <button 
-            onClick={() => navigateLightbox('next')}
-            className="absolute right-6 top-1/2 -translate-y-1/2 text-white hover:text-lawn-300 
-              transition-colors bg-black/30 p-2 rounded-full"
-            aria-label="Next image"
-          >
-            <ArrowRight size={24} />
-          </button>
-        </div>
-      )}
     </div>
   );
 };
