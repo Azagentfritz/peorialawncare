@@ -43,6 +43,12 @@ const ArtificialTurfGallery = () => {
       description: "Artificial turf landscaping for a beautiful, low-maintenance yard."
     },
     {
+      id: 8,
+      image: "/lovable-uploads/856ac044-3289-4c17-ba43-a21db33a271f.png",
+      title: "Side Yard Turf",
+      description: "Artificial turf installation in a narrow side yard space, creating a clean and usable area."
+    },
+    {
       id: 9,
       image: "/lovable-uploads/6b8f96cb-fbda-430d-b04c-46e192c45d80.png",
       title: "Putting Green with Landscape",
