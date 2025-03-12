@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, X, Flower2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
@@ -43,19 +42,6 @@ const ArtificialTurfGallery = () => {
       title: "Turf Installation",
       description: "Artificial turf landscaping for a beautiful, low-maintenance yard."
     },
-    {
-      id: 6,
-      image: "/lovable-uploads/37190635-0531-436f-a4e5-a893a2678bd5.png",
-      title: "Backyard Putting Green",
-      description: "Backyard design with custom putting green for practice and entertainment."
-    },
-    {
-      id: 7,
-      image: "/lovable-uploads/596f2dfa-437d-4157-85c2-955d5e9b365f.png",
-      title: "Modern Turf Installation",
-      description: "Modern backyard featuring artificial turf and concrete pavers."
-    },
-    // Adding new images
     {
       id: 8,
       image: "/lovable-uploads/856ac044-3289-4c17-ba43-a21db33a271f.png",
