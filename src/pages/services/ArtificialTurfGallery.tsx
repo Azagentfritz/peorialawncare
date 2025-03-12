@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, X, Flower2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
@@ -53,6 +54,49 @@ const ArtificialTurfGallery = () => {
       image: "/lovable-uploads/596f2dfa-437d-4157-85c2-955d5e9b365f.png",
       title: "Modern Turf Installation",
       description: "Modern backyard featuring artificial turf and concrete pavers."
+    },
+    // Adding new images
+    {
+      id: 8,
+      image: "/lovable-uploads/856ac044-3289-4c17-ba43-a21db33a271f.png",
+      title: "Side Yard Turf",
+      description: "Artificial turf installation in a narrow side yard space, creating a clean and usable area."
+    },
+    {
+      id: 9,
+      image: "/lovable-uploads/6b8f96cb-fbda-430d-b04c-46e192c45d80.png",
+      title: "Putting Green with Landscape",
+      description: "Professional putting green surrounded by complementary landscaping elements."
+    },
+    {
+      id: 10,
+      image: "/lovable-uploads/888f359e-1bb7-43a3-b71e-4db43cdd87ab.png",
+      title: "Residential Front Yard",
+      description: "Front yard transformation using artificial turf for a maintenance-free, water-saving solution."
+    },
+    {
+      id: 11,
+      image: "/lovable-uploads/3f460f11-b44e-4f31-8871-372978ebb5b9.png",
+      title: "Turf with Stone Path",
+      description: "Elegant artificial turf installation with integrated stone pathway."
+    },
+    {
+      id: 12,
+      image: "/lovable-uploads/ea41def9-f6ff-4ca7-b709-9fc77d8ca393.png",
+      title: "Turf Playground Area",
+      description: "Safe and clean artificial turf play area perfect for families with children."
+    },
+    {
+      id: 13,
+      image: "/lovable-uploads/bbe7a83e-22c8-45f6-a80d-b97a926ac3a5.png",
+      title: "Pet-Friendly Turf Yard",
+      description: "Durable artificial turf installation suitable for pets and high-traffic areas."
+    },
+    {
+      id: 14,
+      image: "/lovable-uploads/67219dde-cd94-4187-bdcc-c92fad315f58.png",
+      title: "Backyard Transformation",
+      description: "Complete backyard renovation with premium artificial turf creating an inviting outdoor space."
     }
   ];
 
