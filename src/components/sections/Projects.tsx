@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import ProjectCard from "../ui/ProjectCard";
 
@@ -48,6 +47,21 @@ const Projects = () => {
       imgSrc: "/lovable-uploads/b7ea6ab6-64d7-47dd-8f5f-03873c8bd611.png",
       title: "Decorative Paver Walkway",
       description: "Custom paver stone pathway with decorative rock borders, creating an elegant desert landscape connection."
+    },
+    {
+      imgSrc: "/lovable-uploads/8193a857-f3a2-4537-8ebe-4d38215269e5.png",
+      title: "Pet-Friendly Turf Installation",
+      description: "Custom artificial turf design perfect for pets, featuring durable materials and proper drainage systems."
+    },
+    {
+      imgSrc: "/lovable-uploads/5ca21bb3-865e-4fca-a122-2ee5dcb0ce96.png",
+      title: "Modern Desert Yard",
+      description: "Low-maintenance yard design combining artificial turf with desert landscaping and stepping stones."
+    },
+    {
+      imgSrc: "/lovable-uploads/033dc831-f71f-47e0-a0cb-5998d4c0cf26.png",
+      title: "Illuminated Fire Pit Area",
+      description: "Custom fire pit installation with LED lighting, comfortable seating, and pool view for evening entertainment."
     },
   ];
 
