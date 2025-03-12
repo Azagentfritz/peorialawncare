@@ -168,11 +168,9 @@ const ArtificialTurfGallery = () => {
                   onClick={() => openLightbox(index)}
                 >
                   <div className="aspect-w-4 aspect-h-3">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
+                    <div className="w-full h-64 bg-lawn-200 flex items-center justify-center">
+                      <span className="text-lawn-600 font-medium">{item.title}</span>
+                    </div>
                   </div>
                 </div>
               ))}
