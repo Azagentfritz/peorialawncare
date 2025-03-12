@@ -4,7 +4,6 @@ import { ArrowLeft, ArrowRight, X, Phone } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingCallButton from "@/components/ui/FloatingCallButton";
-import Projects from "@/components/sections/Projects";
 
 const Gallery = () => {
   const { toast } = useToast();
@@ -184,9 +183,6 @@ const Gallery = () => {
             </div>
           </div>
         </section>
-
-        {/* Projects Section */}
-        <Projects />
         
         {/* Lightbox */}
         {selectedImage && (
