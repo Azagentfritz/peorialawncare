@@ -37,12 +37,6 @@ const ArtificialTurfGallery = () => {
       description: "Family-friendly putting green with multiple practice holes and flags."
     },
     {
-      id: 5,
-      image: "/lovable-uploads/d5b4ee72-8c62-4725-a9f0-58473b18b18a.png",
-      title: "Turf Installation",
-      description: "Artificial turf landscaping for a beautiful, low-maintenance yard."
-    },
-    {
       id: 8,
       image: "/lovable-uploads/856ac044-3289-4c17-ba43-a21db33a271f.png",
       title: "Side Yard Turf",
