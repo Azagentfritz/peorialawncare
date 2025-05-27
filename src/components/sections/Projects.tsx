@@ -63,6 +63,21 @@ const Projects = () => {
       title: "Illuminated Fire Pit Area",
       description: "Custom fire pit installation with LED lighting, comfortable seating, and pool view for evening entertainment."
     },
+    {
+      imgSrc: "/lovable-uploads/e734b36c-35f8-4ef3-95e2-2190bd5b75aa.png",
+      title: "Contemporary Turf Installation",
+      description: "Modern artificial turf with decorative gravel borders and contemporary home design elements."
+    },
+    {
+      imgSrc: "/lovable-uploads/d7f78f6c-0a64-47f0-a6f9-0d10134fae99.png",
+      title: "Evening Fire Pit Lounge",
+      description: "Ambient fire pit area with comfortable seating and strategic nighttime lighting for perfect outdoor gatherings."
+    },
+    {
+      imgSrc: "/lovable-uploads/1c729f22-e7ef-46b8-858a-017a22e581e0.png",
+      title: "Luxury Pool & Spa Design",
+      description: "Premium pool area with integrated spa, fire feature, and dramatic purple accent lighting for resort-style living."
+    }
   ];
 
   return (

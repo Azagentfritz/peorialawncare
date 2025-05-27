@@ -64,6 +64,24 @@ const Gallery = () => {
       image: "/lovable-uploads/eb0bc187-f26e-4d93-929f-55a4cb1b1ae6.png",
       title: "Minimalist Garden Design",
       description: "Clean, modern garden layout with geometric patterns and drought-tolerant plants."
+    },
+    {
+      id: 10,
+      image: "/lovable-uploads/e734b36c-35f8-4ef3-95e2-2190bd5b75aa.png",
+      title: "Contemporary Turf Installation",
+      description: "Modern artificial turf with decorative gravel borders and contemporary home design."
+    },
+    {
+      id: 11,
+      image: "/lovable-uploads/d7f78f6c-0a64-47f0-a6f9-0d10134fae99.png",
+      title: "Evening Fire Pit Lounge",
+      description: "Ambient fire pit area with comfortable seating and nighttime lighting."
+    },
+    {
+      id: 12,
+      image: "/lovable-uploads/1c729f22-e7ef-46b8-858a-017a22e581e0.png",
+      title: "Luxury Pool & Spa Design",
+      description: "Premium pool area with spa, fire feature, and dramatic accent lighting."
     }
   ];
 
