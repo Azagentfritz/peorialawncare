@@ -13,75 +13,75 @@ const Gallery = () => {
   const galleryItems = [
     {
       id: 1,
+      image: "/lovable-uploads/99388392-72bf-4080-8243-5a3987e997a1.png",
+      title: "Outdoor Fire Pit Lounge",
+      description: "Custom stone fire pit with comfortable seating area, perfect for evening entertainment and relaxation."
+    },
+    {
+      id: 2,
+      image: "/lovable-uploads/b42407d7-c3a1-4d15-8c23-0995799f2780.png",
+      title: "Outdoor Kitchen Island",
+      description: "Stone-faced outdoor kitchen with built-in grill and countertop space, designed for backyard cooking and dining."
+    },
+    {
+      id: 3,
+      image: "/lovable-uploads/b7ea6ab6-64d7-47dd-8f5f-03873c8bd611.png",
+      title: "Decorative Paver Walkway",
+      description: "Custom paver stone pathway with decorative rock borders, creating an elegant desert landscape connection."
+    },
+    {
+      id: 4,
       image: "/lovable-uploads/bbe7a83e-22c8-45f6-a80d-b97a926ac3a5.png",
       title: "Modern Backyard Transformation",
       description: "Complete backyard redesign with artificial turf and paved sitting area."
     },
     {
-      id: 2,
+      id: 5,
       image: "/lovable-uploads/67219dde-cd94-4187-bdcc-c92fad315f58.png",
       title: "Outdoor Living Space",
       description: "Custom patio design with creative grass patterns and entertainment area."
     },
     {
-      id: 3,
+      id: 6,
       image: "/lovable-uploads/46125801-c90d-4637-acc1-92cacb7f0b52.png", 
       title: "Pool Area Design",
       description: "Elegant pool surround with custom stonework and night lighting."
     },
     {
-      id: 4,
+      id: 7,
       image: "/lovable-uploads/ec6e6cd6-0c54-4d6b-9cc5-b30a9708d1b8.png",
       title: "Outdoor Dining Space",
       description: "Beautiful patio area with premium outdoor furniture."
     },
     {
-      id: 5,
+      id: 8,
       image: "/lovable-uploads/0ead037d-ae0d-4cb2-b79d-5faf2fdb26f1.png",
       title: "Front Lawn Landscaping",
       description: "Beautiful front yard design with lush green grass and decorative borders."
     },
     {
-      id: 6,
+      id: 9,
       image: "/lovable-uploads/73458201-84f9-42ed-aef2-a2a511d101ad.png",
       title: "Desert Landscape Design",
       description: "Drought-resistant landscape with desert plants and decorative stones."
     },
     {
-      id: 7,
+      id: 10,
       image: "/lovable-uploads/efde9a2b-46bb-45e0-9ec4-b91bd6ba2045.png",
       title: "Garden Pathway Design",
       description: "Elegant garden pathway with custom stonework and lush landscaping."
     },
     {
-      id: 8,
+      id: 11,
       image: "/lovable-uploads/167b96bd-0c16-4360-abcc-efdaa39c0176.png",
       title: "Evening Outdoor Lighting",
       description: "Sophisticated outdoor lighting design highlighting landscape features."
     },
     {
-      id: 9,
+      id: 12,
       image: "/lovable-uploads/eb0bc187-f26e-4d93-929f-55a4cb1b1ae6.png",
       title: "Minimalist Garden Design",
       description: "Clean, modern garden layout with geometric patterns and drought-tolerant plants."
-    },
-    {
-      id: 10,
-      image: "/lovable-uploads/e734b36c-35f8-4ef3-95e2-2190bd5b75aa.png",
-      title: "Contemporary Turf Installation",
-      description: "Modern artificial turf with decorative gravel borders and contemporary home design."
-    },
-    {
-      id: 11,
-      image: "/lovable-uploads/d7f78f6c-0a64-47f0-a6f9-0d10134fae99.png",
-      title: "Evening Fire Pit Lounge",
-      description: "Ambient fire pit area with comfortable seating and nighttime lighting."
-    },
-    {
-      id: 12,
-      image: "/lovable-uploads/1c729f22-e7ef-46b8-858a-017a22e581e0.png",
-      title: "Luxury Pool & Spa Design",
-      description: "Premium pool area with spa, fire feature, and dramatic accent lighting."
     }
   ];
 

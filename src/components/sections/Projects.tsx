@@ -4,6 +4,21 @@ import ProjectCard from "../ui/ProjectCard";
 const Projects = () => {
   const projects = [
     {
+      imgSrc: "/lovable-uploads/99388392-72bf-4080-8243-5a3987e997a1.png",
+      title: "Outdoor Fire Pit Lounge",
+      description: "Custom stone fire pit with comfortable seating area, perfect for evening entertainment and relaxation."
+    },
+    {
+      imgSrc: "/lovable-uploads/b42407d7-c3a1-4d15-8c23-0995799f2780.png",
+      title: "Outdoor Kitchen Island",
+      description: "Stone-faced outdoor kitchen with built-in grill and countertop space, designed for backyard cooking and dining."
+    },
+    {
+      imgSrc: "/lovable-uploads/b7ea6ab6-64d7-47dd-8f5f-03873c8bd611.png",
+      title: "Decorative Paver Walkway",
+      description: "Custom paver stone pathway with decorative rock borders, creating an elegant desert landscape connection."
+    },
+    {
       imgSrc: "/lovable-uploads/bbe7a83e-22c8-45f6-a80d-b97a926ac3a5.png",
       title: "Modern Backyard Transformation",
       description: "Complete backyard redesign with artificial turf, paved sitting area, and custom furniture."
@@ -32,21 +47,6 @@ const Projects = () => {
       imgSrc: "/lovable-uploads/73458201-84f9-42ed-aef2-a2a511d101ad.png",
       title: "Desert Landscape Design",
       description: "Drought-resistant landscape with desert plants, decorative stones, walking path, and water feature."
-    },
-    {
-      imgSrc: "/lovable-uploads/99388392-72bf-4080-8243-5a3987e997a1.png",
-      title: "Outdoor Fire Pit Lounge",
-      description: "Custom stone fire pit with comfortable seating area, perfect for evening entertainment and relaxation."
-    },
-    {
-      imgSrc: "/lovable-uploads/b42407d7-c3a1-4d15-8c23-0995799f2780.png",
-      title: "Outdoor Kitchen Island",
-      description: "Stone-faced outdoor kitchen with built-in grill and countertop space, designed for backyard cooking and dining."
-    },
-    {
-      imgSrc: "/lovable-uploads/b7ea6ab6-64d7-47dd-8f5f-03873c8bd611.png",
-      title: "Decorative Paver Walkway",
-      description: "Custom paver stone pathway with decorative rock borders, creating an elegant desert landscape connection."
     },
     {
       imgSrc: "/lovable-uploads/8193a857-f3a2-4537-8ebe-4d38215269e5.png",
