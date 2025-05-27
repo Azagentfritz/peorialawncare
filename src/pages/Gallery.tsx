@@ -12,6 +12,24 @@ const Gallery = () => {
 
   const galleryItems = [
     {
+      id: 10,
+      image: "/lovable-uploads/efde9a2b-46bb-45e0-9ec4-b91bd6ba2045.png",
+      title: "Garden Pathway Design",
+      description: "Elegant garden pathway with custom stonework and lush landscaping."
+    },
+    {
+      id: 11,
+      image: "/lovable-uploads/167b96bd-0c16-4360-abcc-efdaa39c0176.png",
+      title: "Evening Outdoor Lighting",
+      description: "Sophisticated outdoor lighting design highlighting landscape features."
+    },
+    {
+      id: 12,
+      image: "/lovable-uploads/eb0bc187-f26e-4d93-929f-55a4cb1b1ae6.png",
+      title: "Minimalist Garden Design",
+      description: "Clean, modern garden layout with geometric patterns and drought-tolerant plants."
+    },
+    {
       id: 1,
       image: "/lovable-uploads/99388392-72bf-4080-8243-5a3987e997a1.png",
       title: "Outdoor Fire Pit Lounge",
@@ -64,24 +82,6 @@ const Gallery = () => {
       image: "/lovable-uploads/73458201-84f9-42ed-aef2-a2a511d101ad.png",
       title: "Desert Landscape Design",
       description: "Drought-resistant landscape with desert plants and decorative stones."
-    },
-    {
-      id: 10,
-      image: "/lovable-uploads/efde9a2b-46bb-45e0-9ec4-b91bd6ba2045.png",
-      title: "Garden Pathway Design",
-      description: "Elegant garden pathway with custom stonework and lush landscaping."
-    },
-    {
-      id: 11,
-      image: "/lovable-uploads/167b96bd-0c16-4360-abcc-efdaa39c0176.png",
-      title: "Evening Outdoor Lighting",
-      description: "Sophisticated outdoor lighting design highlighting landscape features."
-    },
-    {
-      id: 12,
-      image: "/lovable-uploads/eb0bc187-f26e-4d93-929f-55a4cb1b1ae6.png",
-      title: "Minimalist Garden Design",
-      description: "Clean, modern garden layout with geometric patterns and drought-tolerant plants."
     }
   ];
 

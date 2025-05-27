@@ -4,6 +4,21 @@ import ProjectCard from "../ui/ProjectCard";
 const Projects = () => {
   const projects = [
     {
+      imgSrc: "/lovable-uploads/8193a857-f3a2-4537-8ebe-4d38215269e5.png",
+      title: "Pet-Friendly Turf Installation",
+      description: "Custom artificial turf design perfect for pets, featuring durable materials and proper drainage systems."
+    },
+    {
+      imgSrc: "/lovable-uploads/5ca21bb3-865e-4fca-a122-2ee5dcb0ce96.png",
+      title: "Modern Desert Yard",
+      description: "Low-maintenance yard design combining artificial turf with desert landscaping and stepping stones."
+    },
+    {
+      imgSrc: "/lovable-uploads/033dc831-f71f-47e0-a0cb-5998d4c0cf26.png",
+      title: "Illuminated Fire Pit Area",
+      description: "Custom fire pit installation with LED lighting, comfortable seating, and pool view for evening entertainment."
+    },
+    {
       imgSrc: "/lovable-uploads/99388392-72bf-4080-8243-5a3987e997a1.png",
       title: "Outdoor Fire Pit Lounge",
       description: "Custom stone fire pit with comfortable seating area, perfect for evening entertainment and relaxation."
@@ -47,21 +62,6 @@ const Projects = () => {
       imgSrc: "/lovable-uploads/73458201-84f9-42ed-aef2-a2a511d101ad.png",
       title: "Desert Landscape Design",
       description: "Drought-resistant landscape with desert plants, decorative stones, walking path, and water feature."
-    },
-    {
-      imgSrc: "/lovable-uploads/8193a857-f3a2-4537-8ebe-4d38215269e5.png",
-      title: "Pet-Friendly Turf Installation",
-      description: "Custom artificial turf design perfect for pets, featuring durable materials and proper drainage systems."
-    },
-    {
-      imgSrc: "/lovable-uploads/5ca21bb3-865e-4fca-a122-2ee5dcb0ce96.png",
-      title: "Modern Desert Yard",
-      description: "Low-maintenance yard design combining artificial turf with desert landscaping and stepping stones."
-    },
-    {
-      imgSrc: "/lovable-uploads/033dc831-f71f-47e0-a0cb-5998d4c0cf26.png",
-      title: "Illuminated Fire Pit Area",
-      description: "Custom fire pit installation with LED lighting, comfortable seating, and pool view for evening entertainment."
     },
     {
       imgSrc: "/lovable-uploads/e734b36c-35f8-4ef3-95e2-2190bd5b75aa.png",
